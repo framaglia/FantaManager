@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
+import socket.Socket;
 
 /**
  *
@@ -20,12 +21,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class QuotazioniUI extends javax.swing.JFrame {
 
+    private static Socket socket = new Socket();
     /**
      * Creates new form q
      */
     public QuotazioniUI() {
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        socket.getSocket().emit("quot", (Object) null);
         this.fillTable();
     }
 
