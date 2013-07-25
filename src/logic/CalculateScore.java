@@ -122,13 +122,13 @@ public class CalculateScore {
         if(subs == 0){
             playerIn = new Player();
             playerIn.setNome("Office");
-            playerIn.setRuolo(role);
+            
             
         }else if(subs < 0){
             
             playerIn = new Player();
             playerIn.setNome("Over");
-            playerIn.setRuolo(role);
+            
         }
         
         else{
