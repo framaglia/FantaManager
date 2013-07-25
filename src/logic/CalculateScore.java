@@ -21,7 +21,9 @@ public class CalculateScore {
     
     public CalculateScore(){
         try {
+            
             ve.extractVotes();
+        
         } catch (IOException ex) {
             Logger.getLogger(CalculateScore.class.getName()).log(Level.SEVERE, null, ex);
         }
