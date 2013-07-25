@@ -6,6 +6,8 @@ package logic;
 
 import extractor.VoteExtractor;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Formation;
 import model.Player;
 
@@ -15,20 +17,43 @@ import model.Player;
  */
 public class CalculateScore {
     
+    private VoteExtractor ve = new VoteExtractor();
+    
+    public CalculateScore(){
+        try {
+            ve.extractVotes();
+        } catch (IOException ex) {
+            Logger.getLogger(CalculateScore.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public double calculate(Formation formation) throws IOException{
         
         Formation f = fixFormation(formation);
         
         double score = 0;
         
-        VoteExtractor ve = new VoteExtractor();
-        ve.extractVotes();
+      
         
         for (String nome : ve.getVotes().keySet()){
             for(Player p : f.getFormation()){
                 
-                   
-                    double app = ve.getVotes().get(p.getNome()).getVote();
+                    
+                    double app = 0.0;
+                    
+                    if(p.getNome().equals("Office")){
+                        
+                        app += 4.0;
+                        
+                    }
+                    else if(p.getNome().equals("Over")){
+                        
+                        app += 0.0;
+                        
+                    }
+                    else {
+                        
+                    app += ve.getVotes().get(p.getNome()).getVote();
                     app +=  3.0 * ve.getVotes().get(p.getNome()).getGf();
                     app += ve.getVotes().get(p.getNome()).getAs();
                     app += -2.0 * ve.getVotes().get(p.getNome()).getAu();
@@ -40,6 +65,7 @@ public class CalculateScore {
                         app -= 0.5;
                     if(ve.getVotes().get(p.getNome()).isEs())
                         app -= 1.0;
+                    }
                     
                     score += app;
 
@@ -60,9 +86,7 @@ public class CalculateScore {
         
         int maxSub = 3;
         
-        
-        VoteExtractor ve = new VoteExtractor();
-        ve.extractVotes();
+    
         
         for (String nome : ve.getVotes().keySet()){
             for(Player p : formation.getFormation()){
@@ -72,7 +96,7 @@ public class CalculateScore {
                 else {
                     if (!ve.getVotes().containsKey(p.getNome()) || ve.getVotes().get(p.getNome()).getVote() == 0.0 ){
                         
-                        Player playerIn = subsitute(p,formation);
+                        Player playerIn = subsitute(p,formation,maxSub);
                         fixedForm.getFormation().add(playerIn);
                         formation.getFormation().remove(playerIn);
                         formation.getBench().remove(playerIn);
@@ -90,12 +114,29 @@ public class CalculateScore {
         
     }
 
-    private Player subsitute(Player p, Formation formation) {
+    private Player subsitute(Player p, Formation formation, int subs) {
+        
         
         String role = p.getRuolo();
-        Player playerIn = null;
+        Player playerIn;
+        if(subs == 0){
+            playerIn = new Player();
+            playerIn.setNome("Office");
+            playerIn.setRuolo(role);
+            
+        }else if(subs < 0){
+            
+            playerIn = new Player();
+            playerIn.setNome("Over");
+            playerIn.setRuolo(role);
+        }
         
-        
+        else{
+            
+            playerIn = formation.getBench().get(0);
+            
+            
+        }
         
         
         return playerIn;
