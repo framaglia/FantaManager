@@ -8,6 +8,7 @@ import extractor.VoteExtractor;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import socket.Socket;
 
 
 /**
@@ -16,6 +17,7 @@ import java.util.logging.Logger;
  */
 public class FantaManagerUI extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form fantaManagerUI
      */
@@ -101,6 +103,7 @@ public class FantaManagerUI extends javax.swing.JFrame {
      
         QuotazioniUI qUI = new QuotazioniUI();
         qUI.setVisible(true);
+        
         
         
        
