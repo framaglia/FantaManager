@@ -13,30 +13,37 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
+
 import socket.Socket;
+import socket.SaveQuotes;
 
 /**
  *
  * @author kix
  */
 public class QuotazioniUI extends javax.swing.JFrame {
-
-    private static Socket socket = new Socket();
+    
+    private ArrayList<ArrayList<Player>> listaPlayers = new ArrayList<>();
+    private SaveQuotes saveQuotes;
+   
     /**
      * Creates new form q
      */
     public QuotazioniUI() {
+        
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        socket.getSocket().emit("quot", (Object) null);
+        this.saveQuotes = new SaveQuotes();
         this.fillTable();
     }
 
     public void fillTable(){
+        
         DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
         
+        
         try {
-            ArrayList<ArrayList<Player>> listaPlayers = extractor.extract();
+            listaPlayers = extractor.extract();
             for (List<Player> l : listaPlayers) {
                 for (Player g : l) {
 
@@ -61,9 +68,10 @@ public class QuotazioniUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        buttonMod = new javax.swing.JButton();
+        buttonSave = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
+        buttonApply = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,14 +102,29 @@ public class QuotazioniUI extends javax.swing.JFrame {
 
         jTextField1.setEditable(false);
 
-        jButton1.setText("Modifica");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonMod.setText("Modifica");
+        buttonMod.setName(""); // NOI18N
+        buttonMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonModActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Salva");
+        buttonSave.setText("Salva");
+        buttonSave.setEnabled(false);
+        buttonSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSaveActionPerformed(evt);
+            }
+        });
+
+        buttonApply.setText("Applica");
+        buttonApply.setEnabled(false);
+        buttonApply.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonApplyActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,13 +135,15 @@ public class QuotazioniUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonMod, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonApply, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(51, 51, 51)
+                        .addComponent(buttonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -127,22 +152,56 @@ public class QuotazioniUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonApply))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonMod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonSave)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonModActionPerformed
+        
+        this.buttonApply.setEnabled(true);
         this.jTextField1.setText(this.jTable1.getValueAt( this.jTable1.getSelectedRow(), 0).toString());
         this.jTextField2.setText(this.jTable1.getValueAt( this.jTable1.getSelectedRow(), 2).toString());
+        
+    }//GEN-LAST:event_buttonModActionPerformed
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
+        
+        this.saveQuotes.saveQuotes(listaPlayers);
+        
+      
+        
+    }//GEN-LAST:event_buttonSaveActionPerformed
+
+    private void buttonApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonApplyActionPerformed
+        
+        DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
+
+        
+        this.saveQuotes.deleteQuotes();
+        this.buttonSave.setEnabled(true);
+        for(List<Player> l : this.listaPlayers){
+            for(Player p : l){
+                if(p.getNome().equals(this.jTextField1.getText())){
+                    
+                    p.setQuotazione(Double.parseDouble(this.jTextField2.getText()));
+                }
+                    
+            }
+        }
+        
+        this.jTable1.setValueAt(Double.parseDouble(jTextField2.getText()), jTable1.getSelectedRow(), 2);
+        
+    }//GEN-LAST:event_buttonApplyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,8 +241,9 @@ public class QuotazioniUI extends javax.swing.JFrame {
     
     private PlayerExtractor extractor = new PlayerExtractor();
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton buttonApply;
+    private javax.swing.JButton buttonMod;
+    private javax.swing.JButton buttonSave;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;

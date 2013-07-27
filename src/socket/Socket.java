@@ -6,6 +6,8 @@ import io.socket.IOAcknowledge;
 import io.socket.IOCallback;
 import io.socket.SocketIO;
 import io.socket.SocketIOException;
+import java.lang.reflect.Array;
+import org.json.JSONArray;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,7 +18,7 @@ import org.json.JSONObject;
 public class Socket implements IOCallback {
 	
 	private SocketIO socket;
-
+     
 
 	public Socket()  {
 		socket = new SocketIO();
@@ -30,7 +32,7 @@ public class Socket implements IOCallback {
 	
 		
 	} 
-	
+
 	
 
 	public SocketIO getSocket() {
@@ -43,18 +45,12 @@ public class Socket implements IOCallback {
 
 	@Override
 	public void onMessage(JSONObject json, IOAcknowledge ack) {
-		try {
-			System.out.println("Server said:" + json.toString(2));
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
+		
+                System.out.println("Server said:" + json.toString());
+		
 	}
 
-        public void onMessage(String s) {
-		
-			System.out.println("Server said:" + s);
-		
-	}
+        
         
 	@Override
 	public void onMessage(String data, IOAcknowledge ack) {
@@ -101,13 +97,29 @@ public class Socket implements IOCallback {
 			}
 		}
                 
-                else if(event.equals("quot")){
+                else if(event.equals("deleted")){
                     
-                    System.out.println("quot riceived");
+                    System.out.println("Players deleted");
                 }
+                
+                
 		
 		
 	}
+        
+        
+        
+      
+    
+    public void on(String event, IOAcknowledge ack, Object obj){
+            
+            if(event.equals("deleted")){
+                System.out.println("JSONArray!");
+            }
+            
+     
+    }
+        
 }
 	
 	
