@@ -49,6 +49,9 @@ public class PlayerExtractor {
                         }
 
                     }
+                    
+                    g.setBuyPrice(0);
+                    g.setFantaTeam(null);
                     rolePlayers.add(g);
                 }
             }

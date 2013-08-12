@@ -7,7 +7,7 @@ public class Player {
 	private double quotazione;
 	private String ruolo;
         private Statistic statistic;
-        private Team fantaTeam;
+        private String fantaTeam;
         private int buyPrice;
 	
 	public Player(String nome, String squadra, int quotazione, String ruolo) {
@@ -17,6 +17,30 @@ public class Player {
 		this.quotazione = quotazione;
 		this.ruolo = ruolo;
 	}
+
+    public Statistic getStatistic() {
+        return statistic;
+    }
+
+    public String getFantaTeam() {
+        return fantaTeam;
+    }
+
+    public int getBuyPrice() {
+        return buyPrice;
+    }
+
+    public void setStatistic(Statistic statistic) {
+        this.statistic = statistic;
+    }
+
+    public void setFantaTeam(String fantaTeam) {
+        this.fantaTeam = fantaTeam;
+    }
+
+    public void setBuyPrice(int buyPrice) {
+        this.buyPrice = buyPrice;
+    }
 	
 	public String getRuolo() {
 		return ruolo;

@@ -36,6 +36,9 @@ public class SaveQuotes {
                     json.append("squadra", p.getSquadra());
                     json.append("quotazione", p.getQuotazione());
                     json.append("ruolo", p.getRuolo());
+                    json.append("prezzo", p.getBuyPrice());
+                    json.append("fantaTeam", p.getFantaTeam());
+                    
                     jarray.put(json);
                     
                         
