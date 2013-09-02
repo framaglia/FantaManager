@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 
-import socket.Socket;
 import socket.SaveQuotes;
 
 /**
@@ -33,9 +33,8 @@ public class QuotazioniUI extends javax.swing.JFrame {
         
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        this.saveQuotes = new SaveQuotes();
-        this.listaPlayers = extractor.extract();
-        //this.fillTable();
+        this.saveQuotes = new SaveQuotes(this);
+        setLocationRelativeTo(null);
         
     }
 
@@ -48,7 +47,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
             for (List<Player> l : listaPlayers) {
                 for (Player g : l) {
 
-                    tm.addRow(new Object[]{g.getNome(), g.getSquadra(), g.getQuotazione(), g.getRuolo()});
+                      tm.addRow(new Object[]{g.getNome(), g.getSquadra(), g.getQuotazione(), g.getRuolo(),g.getBuyPrice(), g.getFantaTeam(),g.getScadenza(),g.getRinnovabile()});
                     
                 }
 
@@ -64,7 +63,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
          for (List<Player> l : this.listaPlayers) {
                 for (Player g : l) {
                     if(g.getRuolo().equals("portiere")){
-                        tm.addRow(new Object[]{g.getNome(), g.getSquadra(), g.getQuotazione(), g.getRuolo(),g.getBuyPrice(), g.getFantaTeam()});
+                        tm.addRow(new Object[]{g.getNome(), g.getSquadra(), g.getQuotazione(), g.getRuolo(),g.getBuyPrice(), g.getFantaTeam(),g.getScadenza(),g.getRinnovabile()});
                     }
                 }
 
@@ -79,7 +78,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
          for (List<Player> l : this.listaPlayers) {
                 for (Player g : l) {
                     if(g.getRuolo().equals("difensore")){
-                        tm.addRow(new Object[]{g.getNome(), g.getSquadra(), g.getQuotazione(), g.getRuolo(),g.getBuyPrice(), g.getFantaTeam()});
+                        tm.addRow(new Object[]{g.getNome(), g.getSquadra(), g.getQuotazione(), g.getRuolo(),g.getBuyPrice(), g.getFantaTeam(),g.getScadenza(),g.getRinnovabile()});
                     }
                 }
 
@@ -94,7 +93,8 @@ public class QuotazioniUI extends javax.swing.JFrame {
          for (List<Player> l : this.listaPlayers) {
                 for (Player g : l) {
                     if(g.getRuolo().equals("centrocampista")){
-                        tm.addRow(new Object[]{g.getNome(), g.getSquadra(), g.getQuotazione(), g.getRuolo(),g.getBuyPrice(), g.getFantaTeam()});
+                       
+                        tm.addRow(new Object[]{g.getNome(), g.getSquadra(), g.getQuotazione(), g.getRuolo(),g.getBuyPrice(), g.getFantaTeam(),g.getScadenza(),g.getRinnovabile()});
                     }
                 }
 
@@ -109,7 +109,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
          for (List<Player> l : this.listaPlayers) {
                 for (Player g : l) {
                     if(g.getRuolo().equals("attaccante")){
-                        tm.addRow(new Object[]{g.getNome(), g.getSquadra(), g.getQuotazione(), g.getRuolo(),g.getBuyPrice(), g.getFantaTeam()});
+                        tm.addRow(new Object[]{g.getNome(), g.getSquadra(), g.getQuotazione(), g.getRuolo(),g.getBuyPrice(), g.getFantaTeam(),g.getScadenza(),g.getRinnovabile()});
                     }
                 }
 
@@ -142,22 +142,32 @@ public class QuotazioniUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
+        jButtonLoad = new javax.swing.JButton();
+        jButtonExtract = new javax.swing.JButton();
+        jComboBoxScadenza = new javax.swing.JComboBox();
+        jLabel5 = new javax.swing.JLabel();
+        jButtonSafeReconnect = new javax.swing.JButton();
+        jButtonLocal = new javax.swing.JButton();
+        jTextFieldSystem = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBoxRinnovo = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setForeground(new java.awt.Color(70, 70, 70));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Nome", "Squadra", "Quotazione", "Ruolo", "Prezzo", "Squadra"
+                "Nome", "Squadra", "Quotazione", "Ruolo", "Ingaggio", "FantaTeam", "Scadenza", "Rinnovabile"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -171,8 +181,11 @@ public class QuotazioniUI extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jTextField1.setEditable(false);
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        buttonMod.setBackground(new java.awt.Color(242, 253, 96));
         buttonMod.setText("Modifica");
+        buttonMod.setEnabled(false);
         buttonMod.setName(""); // NOI18N
         buttonMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,6 +193,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
             }
         });
 
+        buttonSave.setBackground(new java.awt.Color(128, 254, 86));
         buttonSave.setText("Salva");
         buttonSave.setEnabled(false);
         buttonSave.addActionListener(new java.awt.event.ActionListener() {
@@ -188,6 +202,9 @@ public class QuotazioniUI extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldQuot.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        buttonApply.setBackground(new java.awt.Color(99, 254, 252));
         buttonApply.setText("Applica");
         buttonApply.setEnabled(false);
         buttonApply.addActionListener(new java.awt.event.ActionListener() {
@@ -197,6 +214,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
         });
 
         togglePortieri.setText("Portieri");
+        togglePortieri.setEnabled(false);
         togglePortieri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 togglePortieriActionPerformed(evt);
@@ -204,6 +222,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
         });
 
         toggleDifensori.setText("Difensori");
+        toggleDifensori.setEnabled(false);
         toggleDifensori.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleDifensoriActionPerformed(evt);
@@ -211,6 +230,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
         });
 
         toggleCentro.setText("Centrocampisti");
+        toggleCentro.setEnabled(false);
         toggleCentro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleCentroActionPerformed(evt);
@@ -218,6 +238,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
         });
 
         toggleAttaccanti.setText("Attaccanti");
+        toggleAttaccanti.setEnabled(false);
         toggleAttaccanti.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleAttaccantiActionPerformed(evt);
@@ -225,6 +246,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
         });
 
         toggleAll.setText("Tutti");
+        toggleAll.setEnabled(false);
         toggleAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 toggleAllActionPerformed(evt);
@@ -237,6 +259,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Q");
 
+        jTextFieldPrice.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldPriceActionPerformed(evt);
@@ -244,12 +267,71 @@ public class QuotazioniUI extends javax.swing.JFrame {
         });
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("P");
+        jLabel3.setText("I");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "acdc", "acybris", "astronzo", "dlc", "fanfulla", "fantaroma", "felix", "gpsundergland", "lph", "naj", "paris", "vts" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "libero", "acdc", "acybris", "astronzo", "cska", "dlc", "fanfulla", "fantaroma", "felix", "gpsundergland", "paris", "tccfc", "vts" }));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Squadra");
+
+        jButtonLoad.setBackground(new java.awt.Color(100, 177, 253));
+        jButtonLoad.setText("Carica");
+        jButtonLoad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoadActionPerformed(evt);
+            }
+        });
+
+        jButtonExtract.setBackground(new java.awt.Color(100, 177, 253));
+        jButtonExtract.setText("Estrai");
+        jButtonExtract.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExtractActionPerformed(evt);
+            }
+        });
+
+        jComboBoxScadenza.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "libero", "2014", "2015", "2016", "2017", "2018" }));
+        jComboBoxScadenza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxScadenzaActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Scadenza");
+
+        jButtonSafeReconnect.setBackground(new java.awt.Color(255, 111, 111));
+        jButtonSafeReconnect.setText("safeReconnect");
+        jButtonSafeReconnect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSafeReconnectActionPerformed(evt);
+            }
+        });
+
+        jButtonLocal.setBackground(new java.awt.Color(255, 111, 111));
+        jButtonLocal.setText("Local");
+        jButtonLocal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLocalActionPerformed(evt);
+            }
+        });
+
+        jTextFieldSystem.setEditable(false);
+        jTextFieldSystem.setBackground(new java.awt.Color(254, 252, 108));
+        jTextFieldSystem.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldSystem.setText("System not connected");
+        jTextFieldSystem.setFocusable(false);
+        jTextFieldSystem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldSystemActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Rinnovabile");
+        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jComboBoxRinnovo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -260,10 +342,20 @@ public class QuotazioniUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(togglePortieri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(toggleDifensori, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(toggleCentro, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                    .addComponent(toggleCentro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(toggleAttaccanti, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(toggleAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonMod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(buttonMod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtonLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonExtract, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(jButtonLocal, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonSafeReconnect, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jTextFieldSystem))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -280,24 +372,43 @@ public class QuotazioniUI extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jComboBox1, 0, 1, Short.MAX_VALUE))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonApply, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 14, Short.MAX_VALUE)
+                                .addComponent(jComboBoxScadenza, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                            .addComponent(jComboBoxRinnovo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jScrollPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buttonApply, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
+                        .addComponent(jButtonSafeReconnect, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonLoad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                            .addComponent(jButtonLocal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonExtract, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(togglePortieri)
                         .addGap(18, 18, 18)
                         .addComponent(toggleDifensori)
@@ -307,121 +418,184 @@ public class QuotazioniUI extends javax.swing.JFrame {
                         .addComponent(toggleAttaccanti)
                         .addGap(18, 18, 18)
                         .addComponent(toggleAll)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
                     .addComponent(jLabel4)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)))
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonMod)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldQuot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonApply)
                     .addComponent(buttonSave)
-                    .addComponent(jTextFieldPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jComboBoxScadenza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRinnovo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonModActionPerformed
-        
-        this.buttonApply.setEnabled(true);
-        this.jTextField1.setText(this.jTable1.getValueAt( this.jTable1.getSelectedRow(), 0).toString());
-        this.jTextFieldQuot.setText(this.jTable1.getValueAt( this.jTable1.getSelectedRow(), 2).toString());
-        this.jTextFieldPrice.setText(this.jTable1.getValueAt(this.jTable1.getSelectedRow(), 4).toString());
-        
-        
-    }//GEN-LAST:event_buttonModActionPerformed
+    private void jButtonLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLocalActionPerformed
+        this.togglePortieri.setEnabled(true);
+        this.toggleDifensori.setEnabled(true);
+        this.toggleCentro.setEnabled(true);
+        this.toggleAttaccanti.setEnabled(true);
+        this.toggleAll.setEnabled(true);
+        this.buttonMod.setEnabled(true);
+    }//GEN-LAST:event_jButtonLocalActionPerformed
 
-    private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
-        
-        this.saveQuotes.saveQuotes(listaPlayers);
-        
-      
-        
-    }//GEN-LAST:event_buttonSaveActionPerformed
-
-    private void buttonApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonApplyActionPerformed
-        
-        DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
-
-        
-        this.saveQuotes.deleteQuotes();
-        this.buttonSave.setEnabled(true);
-        for(List<Player> l : this.listaPlayers){
-            for(Player p : l){
-                if(p.getNome().equals(this.jTextField1.getText())){
-                    
-                    p.setQuotazione(Double.parseDouble(this.jTextFieldQuot.getText()));
-                    p.setBuyPrice(Integer.parseInt(this.jTextFieldPrice.getText()));
-                    p.setFantaTeam(this.jComboBox1.getSelectedItem().toString());
-                }
-                    
-            }
+    private void jButtonSafeReconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSafeReconnectActionPerformed
+        try {
+            QuotazioniUI newQui = new QuotazioniUI();
+            newQui.setListaPlayers(listaPlayers);
+            newQui.show();
+            this.dispose();
+        } catch (IOException ex) {
+            Logger.getLogger(QuotazioniUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        this.jTable1.setValueAt(Double.parseDouble(jTextFieldQuot.getText()), jTable1.getSelectedRow(), 2);
-        this.jTable1.setValueAt(Integer.parseInt(jTextFieldPrice.getText()), jTable1.getSelectedRow(), 4);
-        this.jTable1.setValueAt(this.jComboBox1.getSelectedItem().toString(), jTable1.getSelectedRow(), 5);
-    }//GEN-LAST:event_buttonApplyActionPerformed
+    }//GEN-LAST:event_jButtonSafeReconnectActionPerformed
 
-    private void togglePortieriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togglePortieriActionPerformed
-        
-        this.toggleAll.setSelected(false);
-        this.toggleAttaccanti.setSelected(false);
-        this.toggleCentro.setSelected(false);
-        this.toggleDifensori.setSelected(false);
-        
-        fillGoalKeeperTable();
-        
-       
-    }//GEN-LAST:event_togglePortieriActionPerformed
+    private void jComboBoxScadenzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxScadenzaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxScadenzaActionPerformed
+
+    private void jButtonExtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExtractActionPerformed
+
+        try {
+            this.listaPlayers = extractor.extract();
+        } catch (IOException ex) {
+            Logger.getLogger(QuotazioniUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        this.togglePortieri.setEnabled(true);
+        this.toggleDifensori.setEnabled(true);
+        this.toggleCentro.setEnabled(true);
+        this.toggleAttaccanti.setEnabled(true);
+        this.toggleAll.setEnabled(true);
+        this.buttonMod.setEnabled(true);
+
+    }//GEN-LAST:event_jButtonExtractActionPerformed
+
+    private void jButtonLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoadActionPerformed
+
+        this.saveQuotes.loadPlayers();
+
+        this.togglePortieri.setEnabled(true);
+        this.toggleDifensori.setEnabled(true);
+        this.toggleCentro.setEnabled(true);
+        this.toggleAttaccanti.setEnabled(true);
+        this.toggleAll.setEnabled(true);
+        this.buttonMod.setEnabled(true);
+    }//GEN-LAST:event_jButtonLoadActionPerformed
+
+    private void jTextFieldPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldPriceActionPerformed
 
     private void toggleAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleAllActionPerformed
         this.togglePortieri.setSelected(false);
         this.toggleAttaccanti.setSelected(false);
         this.toggleCentro.setSelected(false);
         this.toggleDifensori.setSelected(false);
-        
+
         fillTable();
     }//GEN-LAST:event_toggleAllActionPerformed
-
-    private void toggleDifensoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleDifensoriActionPerformed
-        this.togglePortieri.setSelected(false);
-        this.toggleAttaccanti.setSelected(false);
-        this.toggleCentro.setSelected(false);
-        this.toggleAll.setSelected(false);
-        
-        fillDifenseTable();
-    }//GEN-LAST:event_toggleDifensoriActionPerformed
-
-    private void toggleCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleCentroActionPerformed
-        this.togglePortieri.setSelected(false);
-        this.toggleAttaccanti.setSelected(false);
-        this.toggleDifensori.setSelected(false);
-        this.toggleAll.setSelected(false);
-        
-        fillMidfielderTable();
-    }//GEN-LAST:event_toggleCentroActionPerformed
 
     private void toggleAttaccantiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleAttaccantiActionPerformed
         this.togglePortieri.setSelected(false);
         this.toggleCentro.setSelected(false);
         this.toggleDifensori.setSelected(false);
         this.toggleAll.setSelected(false);
-        
+
         fillAttackerTable();
     }//GEN-LAST:event_toggleAttaccantiActionPerformed
 
-    private void jTextFieldPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPriceActionPerformed
+    private void toggleCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleCentroActionPerformed
+        this.togglePortieri.setSelected(false);
+        this.toggleAttaccanti.setSelected(false);
+        this.toggleDifensori.setSelected(false);
+        this.toggleAll.setSelected(false);
+
+        fillMidfielderTable();
+    }//GEN-LAST:event_toggleCentroActionPerformed
+
+    private void toggleDifensoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleDifensoriActionPerformed
+        this.togglePortieri.setSelected(false);
+        this.toggleAttaccanti.setSelected(false);
+        this.toggleCentro.setSelected(false);
+        this.toggleAll.setSelected(false);
+
+        fillDifenseTable();
+    }//GEN-LAST:event_toggleDifensoriActionPerformed
+
+    private void togglePortieriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togglePortieriActionPerformed
+
+        this.toggleAll.setSelected(false);
+        this.toggleAttaccanti.setSelected(false);
+        this.toggleCentro.setSelected(false);
+        this.toggleDifensori.setSelected(false);
+
+        fillGoalKeeperTable();
+
+    }//GEN-LAST:event_togglePortieriActionPerformed
+
+    private void buttonApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonApplyActionPerformed
+
+        DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
+
+        this.saveQuotes.deleteQuotes();
+        this.buttonSave.setEnabled(true);
+        for(List<Player> l : this.listaPlayers){
+            for(Player p : l){
+                if(p.getNome().equals(this.jTextField1.getText())){
+
+                    p.setQuotazione(Integer.parseInt(this.jTextFieldQuot.getText()));
+                    p.setBuyPrice(Integer.parseInt(this.jTextFieldPrice.getText()));
+                    p.setFantaTeam(this.jComboBox1.getSelectedItem().toString());
+                    p.setScadenza(this.jComboBoxScadenza.getSelectedItem().toString());
+                    p.setRinnovabile(this.jComboBoxRinnovo.getSelectedItem().toString());
+                }
+
+            }
+        }
+
+        this.jTable1.setValueAt(Integer.parseInt(jTextFieldQuot.getText()), jTable1.getSelectedRow(), 2);
+        this.jTable1.setValueAt(Integer.parseInt(jTextFieldPrice.getText()), jTable1.getSelectedRow(), 4);
+        this.jTable1.setValueAt(this.jComboBox1.getSelectedItem().toString(), jTable1.getSelectedRow(), 5);
+        this.jTable1.setValueAt(this.jComboBoxScadenza.getSelectedItem().toString(), jTable1.getSelectedRow(), 6);
+        this.jTable1.setValueAt(this.jComboBoxRinnovo.getSelectedItem().toString(), jTable1.getSelectedRow(), 7);
+    }//GEN-LAST:event_buttonApplyActionPerformed
+
+    private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
+
+        this.saveQuotes.saveQuotes(listaPlayers);
+
+    }//GEN-LAST:event_buttonSaveActionPerformed
+
+    private void buttonModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonModActionPerformed
+
+        this.buttonApply.setEnabled(true);
+        this.jTextField1.setText(this.jTable1.getValueAt( this.jTable1.getSelectedRow(), 0).toString());
+        this.jTextFieldQuot.setText(this.jTable1.getValueAt( this.jTable1.getSelectedRow(), 2).toString());
+        this.jTextFieldPrice.setText(this.jTable1.getValueAt(this.jTable1.getSelectedRow(), 4).toString());
+
+    }//GEN-LAST:event_buttonModActionPerformed
+
+    private void jTextFieldSystemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSystemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPriceActionPerformed
+    }//GEN-LAST:event_jTextFieldSystemActionPerformed
+
+    public JTextField getjTextFieldSystem() {
+        return jTextFieldSystem;
+    }
 
     /**
      * @param args the command line arguments
@@ -463,22 +637,39 @@ public class QuotazioniUI extends javax.swing.JFrame {
             }
         });
     }
+
+    public  ArrayList<ArrayList<Player>> getListaPlayers() {
+        return listaPlayers;
+    }
+
+    public  void setListaPlayers(ArrayList<ArrayList<Player>> listaPlayers) {
+        this.listaPlayers = listaPlayers;
+    }
     
     private PlayerExtractor extractor = new PlayerExtractor();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonApply;
     private javax.swing.JButton buttonMod;
     private javax.swing.JButton buttonSave;
+    private javax.swing.JButton jButtonExtract;
+    private javax.swing.JButton jButtonLoad;
+    private javax.swing.JButton jButtonLocal;
+    private javax.swing.JButton jButtonSafeReconnect;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBoxRinnovo;
+    private javax.swing.JComboBox jComboBoxScadenza;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldPrice;
     private javax.swing.JTextField jTextFieldQuot;
+    private javax.swing.JTextField jTextFieldSystem;
     private javax.swing.JToggleButton toggleAll;
     private javax.swing.JToggleButton toggleAttaccanti;
     private javax.swing.JToggleButton toggleCentro;

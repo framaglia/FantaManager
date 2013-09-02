@@ -36,7 +36,11 @@ public class PlayerExtractor {
 
                     Player g = new Player();
                     g.setRuolo(ruolo);
-                    double quotazione = (Math.round(Double.parseDouble(tr.getElementsByTag("td").get(1).text().replace(',', '.'))));
+                   
+                    double quotazioneD = (Double.parseDouble(tr.getElementsByTag("td").get(1).text().replace(',', '.')));
+                    
+                    int quotazione = (int)quotazioneD;
+                    
                     g.setQuotazione(quotazione);
                     for (Element td : tr.getElementsByTag("td")) {
                         if (td.getElementsByTag("a").attr("title").contains("Visualizza le statistiche di")) {
@@ -51,7 +55,9 @@ public class PlayerExtractor {
                     }
                     
                     g.setBuyPrice(0);
-                    g.setFantaTeam(null);
+                    g.setFantaTeam("libero");
+                    g.setScadenza("libero");
+                    g.setRinnovabile("Si");
                     rolePlayers.add(g);
                 }
             }

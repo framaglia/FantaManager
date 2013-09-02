@@ -4,12 +4,14 @@ public class Player {
 
 	private String nome;
 	private String squadra;
-	private double quotazione;
+	private int quotazione;
 	private String ruolo;
         private Statistic statistic;
         private String fantaTeam;
         private int buyPrice;
-	
+        private String scadenza;
+        private String rinnovabile;
+
 	public Player(String nome, String squadra, int quotazione, String ruolo) {
 		
 		this.nome = nome;
@@ -18,6 +20,17 @@ public class Player {
 		this.ruolo = ruolo;
 	}
 
+        
+    
+    public String getRinnovabile() {
+        return rinnovabile;
+    }
+
+    public void setRinnovabile(String rinnovabile) {
+        this.rinnovabile = rinnovabile;
+    }
+
+	
     public Statistic getStatistic() {
         return statistic;
     }
@@ -30,6 +43,14 @@ public class Player {
         return buyPrice;
     }
 
+    
+    public String getScadenza() {
+        return scadenza;
+    }
+
+    public void setScadenza(String scadenza) {
+        this.scadenza = scadenza;
+    }
     public void setStatistic(Statistic statistic) {
         this.statistic = statistic;
     }
@@ -62,7 +83,7 @@ public class Player {
 		return squadra;
 	}
 
-	public double getQuotazione() {
+	public int getQuotazione() {
 		return quotazione;
 	}
 
@@ -74,7 +95,7 @@ public class Player {
 		this.squadra = squadra;
 	}
 
-	public void setQuotazione(double quotazione) {
+	public void setQuotazione(int quotazione) {
 		this.quotazione = quotazione;
 	}
 
