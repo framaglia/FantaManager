@@ -16,7 +16,7 @@ public class Ranking {
     private List<Team> ranking;
 
     public Ranking() {
-        this.ranking = new ArrayList<>();
+        this.ranking = new ArrayList<Team>();
     }
     
     

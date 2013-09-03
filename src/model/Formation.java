@@ -35,7 +35,7 @@ public class Formation {
     }
 
     public Formation() {
-        this.formation = new ArrayList<>();
+        this.formation = new ArrayList<Player>();
     }
     
     

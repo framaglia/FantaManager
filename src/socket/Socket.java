@@ -18,6 +18,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import extractor.NameComparatorByRole;
+import java.util.HashMap;
+import model.Cash;
 
 
 
@@ -125,81 +127,111 @@ public class Socket implements IOCallback {
                     
                     System.out.println("Players deleted");
                 }
+                
+                else if(event.equals("cashes")){
+                    System.out.println("cashes arrived");
+                    
+                    HashMap<String, Cash> cashes = new HashMap<String, Cash>();
+                    JSONArray jsonArray = ((JSONArray) args[0]);
+                    try {
+                        System.out.println(jsonArray.getJSONObject(0).getString("cash"));
+                    } catch (JSONException ex) {
+                        Logger.getLogger(Socket.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    for (int i = 0; i < jsonArray.length(); i++){
+                        try {
+                            System.out.println(jsonArray.getJSONObject(i).getString("team").toString());
+                            String team = jsonArray.getJSONObject(i).getString("team");
+                            int cash = jsonArray.getJSONObject(i).getInt("cash");
+                            int charge = jsonArray.getJSONObject(i).getInt("charge");
+                            Cash c = new Cash();
+                            c.setCash(cash);
+                            c.setCharge(charge);
+                            cashes.put(team, c);
+                        } catch (JSONException ex) {
+                            Logger.getLogger(Socket.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    
+                    this.saveQuotes.setCashes(cashes);
+                    this.saveQuotes.cashesLoaded();
+                }
+                
                 //
                 else if(event.equals("players")){
                     System.out.println("players arrived");
                     
-                    ArrayList<ArrayList<Player>> players = new ArrayList<>();
-                    ArrayList<Player> portieri = new ArrayList<>();
-                    ArrayList<Player> difensori = new ArrayList<>();
-                    ArrayList<Player> centro = new ArrayList<>();
-                    ArrayList<Player> attaccanti = new ArrayList<>();
+                    ArrayList<ArrayList<Player>> players = new ArrayList<ArrayList<Player>>();
+                    ArrayList<Player> portieri = new ArrayList<Player>();
+                    ArrayList<Player> difensori = new ArrayList<Player>();
+                    ArrayList<Player> centro = new ArrayList<Player>();
+                    ArrayList<Player> attaccanti = new ArrayList<Player>();
                     
                     JSONArray jsonArray = ((JSONArray) args[0]);
                     for (int i = 0; i < jsonArray.length(); i++){
                         try {
-                            System.out.println(jsonArray.getJSONObject(i).getString("ruolo").toString());
-                            switch (jsonArray.getJSONObject(i).getString("ruolo")) {
-                                case "["+'"'+"portiere"+'"'+"]":
-                                    {
+                            String attRole = jsonArray.getJSONObject(i).getString("ruolo").toString();
+                            if (attRole.equals("portiere")) {
+                                
+                                    
                                         Player p = new Player();
-                                        p.setNome(stringClean(jsonArray.getJSONObject(i).getString("name")));
-                                        p.setSquadra(stringClean(jsonArray.getJSONObject(i).getString("squadra")));
-                                        p.setQuotazione(integerClean(jsonArray.getJSONObject(i).getString("quotazione")));
-                                        p.setRuolo(stringClean(jsonArray.getJSONObject(i).getString("ruolo")));
-                                        p.setBuyPrice(integerClean(jsonArray.getJSONObject(i).getString("prezzo")));
-                                        p.setFantaTeam(stringClean(jsonArray.getJSONObject(i).getString("fantaTeam")));
-                                        p.setScadenza(stringClean(jsonArray.getJSONObject(i).getString("scadenza")));
-                                        p.setRinnovabile(stringClean(jsonArray.getJSONObject(i).getString("rinnovo")));
+                                        p.setNome(jsonArray.getJSONObject(i).getString("name"));
+                                        p.setSquadra(jsonArray.getJSONObject(i).getString("squadra"));
+                                        p.setQuotazione(jsonArray.getJSONObject(i).getInt("quotazione"));
+                                        p.setRuolo(jsonArray.getJSONObject(i).getString("ruolo"));
+                                        p.setBuyPrice(jsonArray.getJSONObject(i).getInt("prezzo"));
+                                        p.setFantaTeam(jsonArray.getJSONObject(i).getString("fantaTeam"));
+                                        p.setScadenza(jsonArray.getJSONObject(i).getString("scadenza"));
+                                        p.setRinnovabile(jsonArray.getJSONObject(i).getString("rinnovo"));
                                         portieri.add(p);
-                                        break;
+                                       
                                     }
-                                case "["+'"'+"difensore"+'"'+"]":
+                                    else if(attRole.equals("difensore"))
                                     {
                                         Player p = new Player();
-                                        p.setNome(stringClean(jsonArray.getJSONObject(i).getString("name")));
-                                        p.setSquadra(stringClean(jsonArray.getJSONObject(i).getString("squadra")));
-                                        p.setQuotazione(integerClean(jsonArray.getJSONObject(i).getString("quotazione")));
-                                        p.setRuolo(stringClean(jsonArray.getJSONObject(i).getString("ruolo")));
-                                        p.setBuyPrice(integerClean(jsonArray.getJSONObject(i).getString("prezzo")));
-                                        p.setFantaTeam(stringClean(jsonArray.getJSONObject(i).getString("fantaTeam")));
-                                        p.setScadenza(stringClean(jsonArray.getJSONObject(i).getString("scadenza")));
-                                        p.setRinnovabile(stringClean(jsonArray.getJSONObject(i).getString("rinnovo")));
+                                        p.setNome(jsonArray.getJSONObject(i).getString("name"));
+                                        p.setSquadra(jsonArray.getJSONObject(i).getString("squadra"));
+                                        p.setQuotazione(jsonArray.getJSONObject(i).getInt("quotazione"));
+                                        p.setRuolo(jsonArray.getJSONObject(i).getString("ruolo"));
+                                        p.setBuyPrice(jsonArray.getJSONObject(i).getInt("prezzo"));
+                                        p.setFantaTeam(jsonArray.getJSONObject(i).getString("fantaTeam"));
+                                        p.setScadenza(jsonArray.getJSONObject(i).getString("scadenza"));
+                                        p.setRinnovabile(jsonArray.getJSONObject(i).getString("rinnovo"));
                                         difensori.add(p);
-                                        break;
+                                        
                                     }
-                                case "["+'"'+"centrocampista"+'"'+"]":
+                                else if(attRole.equals("centrocampista"))
                                     {
                                         Player p = new Player();
-                                        p.setNome(stringClean(jsonArray.getJSONObject(i).getString("name")));
-                                        p.setSquadra(stringClean(jsonArray.getJSONObject(i).getString("squadra")));
-                                        p.setQuotazione(integerClean(jsonArray.getJSONObject(i).getString("quotazione")));
-                                        p.setRuolo(stringClean(jsonArray.getJSONObject(i).getString("ruolo")));
-                                        p.setBuyPrice(integerClean(jsonArray.getJSONObject(i).getString("prezzo")));
-                                        p.setFantaTeam(stringClean(jsonArray.getJSONObject(i).getString("fantaTeam")));
-                                        p.setScadenza(stringClean(jsonArray.getJSONObject(i).getString("scadenza")));
-                                        p.setRinnovabile(stringClean(jsonArray.getJSONObject(i).getString("rinnovo")));
+                                        p.setNome(jsonArray.getJSONObject(i).getString("name"));
+                                        p.setSquadra(jsonArray.getJSONObject(i).getString("squadra"));
+                                        p.setQuotazione(jsonArray.getJSONObject(i).getInt("quotazione"));
+                                        p.setRuolo(jsonArray.getJSONObject(i).getString("ruolo"));
+                                        p.setBuyPrice(jsonArray.getJSONObject(i).getInt("prezzo"));
+                                        p.setFantaTeam(jsonArray.getJSONObject(i).getString("fantaTeam"));
+                                        p.setScadenza(jsonArray.getJSONObject(i).getString("scadenza"));
+                                        p.setRinnovabile(jsonArray.getJSONObject(i).getString("rinnovo"));
                                         centro.add(p);
-                                        break;
+                                        
                                     }
-                                case "["+'"'+"attaccante"+'"'+"]":
+                                else if(attRole.equals("attaccante"))
                                     {
-                                         Player p = new Player();
-                                        p.setNome(stringClean(jsonArray.getJSONObject(i).getString("name")));
-                                        p.setSquadra(stringClean(jsonArray.getJSONObject(i).getString("squadra")));
-                                        p.setQuotazione(integerClean(jsonArray.getJSONObject(i).getString("quotazione")));
-                                        p.setRuolo(stringClean(jsonArray.getJSONObject(i).getString("ruolo")));
-                                        p.setBuyPrice(integerClean(jsonArray.getJSONObject(i).getString("prezzo")));
-                                        p.setFantaTeam(stringClean(jsonArray.getJSONObject(i).getString("fantaTeam")));
-                                        p.setScadenza(stringClean(jsonArray.getJSONObject(i).getString("scadenza")));
-                                        p.setRinnovabile(stringClean(jsonArray.getJSONObject(i).getString("rinnovo")));
+                                        Player p = new Player();
+                                        p.setNome(jsonArray.getJSONObject(i).getString("name"));
+                                        p.setSquadra(jsonArray.getJSONObject(i).getString("squadra"));
+                                        p.setQuotazione(jsonArray.getJSONObject(i).getInt("quotazione"));
+                                        p.setRuolo(jsonArray.getJSONObject(i).getString("ruolo"));
+                                        p.setBuyPrice(jsonArray.getJSONObject(i).getInt("prezzo"));
+                                        p.setFantaTeam(jsonArray.getJSONObject(i).getString("fantaTeam"));
+                                        p.setScadenza(jsonArray.getJSONObject(i).getString("scadenza"));
+                                        p.setRinnovabile(jsonArray.getJSONObject(i).getString("rinnovo"));
                                         attaccanti.add(p);
-                                        break;
+                                        
                                     }
-                            }
-                        } catch (JSONException ex) {
+                            } catch (JSONException ex) {
                             Logger.getLogger(Socket.class.getName()).log(Level.SEVERE, null, ex);
                         }
+                       
                        
                         
                     }

@@ -20,7 +20,7 @@ public class Calendar {
     }
 
     public Calendar() {
-        this.day = new HashMap<>();
+        this.day = new HashMap<Integer, Match>();
     }
     
     

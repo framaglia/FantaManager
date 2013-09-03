@@ -18,12 +18,12 @@ public class PlayerExtractor {
     public ArrayList<ArrayList<Player>> extract() throws IOException {
 
 
-        ArrayList<ArrayList<Player>> players = new ArrayList<>();
+        ArrayList<ArrayList<Player>> players = new ArrayList<ArrayList<Player>>();
         File dir = new File("/home/kix/Documenti/fantaDoc/quotazioni");
 
         for (File child : dir.listFiles()) {
 
-            ArrayList<Player> rolePlayers = new ArrayList<>();
+            ArrayList<Player> rolePlayers = new ArrayList<Player>();
             Document document2parse = Jsoup.parse(child, "UTF-8");
             String ruolo = child.getName().replace(".html", "");
 

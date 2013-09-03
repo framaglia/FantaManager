@@ -8,12 +8,15 @@ import model.Player;
 import extractor.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
+import model.Cash;
 
 import socket.SaveQuotes;
 
@@ -23,9 +26,11 @@ import socket.SaveQuotes;
  */
 public class QuotazioniUI extends javax.swing.JFrame {
     
-    private ArrayList<ArrayList<Player>> listaPlayers = new ArrayList<>();
+    private ArrayList<ArrayList<Player>> listaPlayers = new ArrayList<ArrayList<Player>>();
+    private HashMap<String, Cash> cassaSquadre = new HashMap<String, Cash>();
     private SaveQuotes saveQuotes;
-   
+
+
     /**
      * Creates new form q
      */
@@ -38,6 +43,59 @@ public class QuotazioniUI extends javax.swing.JFrame {
         
     }
 
+    
+      public void loadCashTeam(){
+        
+        ArrayList<String> teams = new ArrayList<String>(); 
+        Set<String> teamSet = this.cassaSquadre.keySet();
+        
+        for (String s : teamSet){
+            teams.add(s);
+        }
+        
+        this.jTextFieldT1.setText(teams.get(0));
+        this.jTextFieldT2.setText(teams.get(1));
+        this.jTextFieldT3.setText(teams.get(2));
+        this.jTextFieldT4.setText(teams.get(3));
+        this.jTextFieldT5.setText(teams.get(4));
+        this.jTextFieldT6.setText(teams.get(5));
+        this.jTextFieldT7.setText(teams.get(6));
+        this.jTextFieldT8.setText(teams.get(7));
+        this.jTextFieldT9.setText(teams.get(8));
+        this.jTextFieldT10.setText(teams.get(9));
+        this.jTextFieldT11.setText(teams.get(10));
+        this.jTextFieldT12.setText(teams.get(11));
+        
+        
+        this.jTextFieldCharge1.setText(String.valueOf(this.cassaSquadre.get(teams.get(0)).getCharge()));
+        this.jTextFieldCharge2.setText(String.valueOf(this.cassaSquadre.get(teams.get(1)).getCharge()));
+        this.jTextFieldCharge3.setText(String.valueOf(this.cassaSquadre.get(teams.get(2)).getCharge()));
+        this.jTextFieldCharge4.setText(String.valueOf(this.cassaSquadre.get(teams.get(3)).getCharge()));
+        this.jTextFieldCharge5.setText(String.valueOf(this.cassaSquadre.get(teams.get(4)).getCharge()));
+        this.jTextFieldCharge6.setText(String.valueOf(this.cassaSquadre.get(teams.get(5)).getCharge()));
+        this.jTextFieldCharge7.setText(String.valueOf(this.cassaSquadre.get(teams.get(6)).getCharge()));
+        this.jTextFieldCharge8.setText(String.valueOf(this.cassaSquadre.get(teams.get(7)).getCharge()));
+        this.jTextFieldCharge9.setText(String.valueOf(this.cassaSquadre.get(teams.get(8)).getCharge()));
+        this.jTextFieldCharge10.setText(String.valueOf(this.cassaSquadre.get(teams.get(9)).getCharge()));
+        this.jTextFieldCharge11.setText(String.valueOf(this.cassaSquadre.get(teams.get(10)).getCharge()));
+        this.jTextFieldCharge12.setText(String.valueOf(this.cassaSquadre.get(teams.get(11)).getCharge()));
+        
+        
+        this.jTextFieldCash1.setText(String.valueOf(this.cassaSquadre.get(teams.get(0)).getCash()));
+        this.jTextFieldCash2.setText(String.valueOf(this.cassaSquadre.get(teams.get(1)).getCash()));
+        this.jTextFieldCash3.setText(String.valueOf(this.cassaSquadre.get(teams.get(2)).getCash()));
+        this.jTextFieldCash4.setText(String.valueOf(this.cassaSquadre.get(teams.get(3)).getCash()));
+        this.jTextFieldCash5.setText(String.valueOf(this.cassaSquadre.get(teams.get(4)).getCash()));
+        this.jTextFieldCash6.setText(String.valueOf(this.cassaSquadre.get(teams.get(5)).getCash()));
+        this.jTextFieldCash7.setText(String.valueOf(this.cassaSquadre.get(teams.get(6)).getCash()));
+        this.jTextFieldCash8.setText(String.valueOf(this.cassaSquadre.get(teams.get(7)).getCash()));
+        this.jTextFieldCash9.setText(String.valueOf(this.cassaSquadre.get(teams.get(8)).getCash()));
+        this.jTextFieldCash10.setText(String.valueOf(this.cassaSquadre.get(teams.get(9)).getCash()));
+        this.jTextFieldCash11.setText(String.valueOf(this.cassaSquadre.get(teams.get(10)).getCash()));
+        this.jTextFieldCash12.setText(String.valueOf(this.cassaSquadre.get(teams.get(11)).getCash()));
+        
+    } 
+        
     public void fillTable(){
         
         DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
@@ -151,6 +209,44 @@ public class QuotazioniUI extends javax.swing.JFrame {
         jTextFieldSystem = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jComboBoxRinnovo = new javax.swing.JComboBox();
+        jTextFieldT1 = new javax.swing.JTextField();
+        jTextFieldT2 = new javax.swing.JTextField();
+        jTextFieldT3 = new javax.swing.JTextField();
+        jTextFieldT4 = new javax.swing.JTextField();
+        jTextFieldT5 = new javax.swing.JTextField();
+        jTextFieldT6 = new javax.swing.JTextField();
+        jTextFieldT7 = new javax.swing.JTextField();
+        jTextFieldT8 = new javax.swing.JTextField();
+        jTextFieldT9 = new javax.swing.JTextField();
+        jTextFieldT10 = new javax.swing.JTextField();
+        jTextFieldT11 = new javax.swing.JTextField();
+        jTextFieldT12 = new javax.swing.JTextField();
+        jTextFieldCash1 = new javax.swing.JTextField();
+        jTextFieldCash2 = new javax.swing.JTextField();
+        jTextFieldCash3 = new javax.swing.JTextField();
+        jTextFieldCash4 = new javax.swing.JTextField();
+        jTextFieldCash5 = new javax.swing.JTextField();
+        jTextFieldCash6 = new javax.swing.JTextField();
+        jTextFieldCash7 = new javax.swing.JTextField();
+        jTextFieldCash8 = new javax.swing.JTextField();
+        jTextFieldCash9 = new javax.swing.JTextField();
+        jTextFieldCash10 = new javax.swing.JTextField();
+        jTextFieldCash11 = new javax.swing.JTextField();
+        jTextFieldCash12 = new javax.swing.JTextField();
+        jTextFieldCharge1 = new javax.swing.JTextField();
+        jTextFieldCharge2 = new javax.swing.JTextField();
+        jTextFieldCharge3 = new javax.swing.JTextField();
+        jTextFieldCharge4 = new javax.swing.JTextField();
+        jTextFieldCharge5 = new javax.swing.JTextField();
+        jTextFieldCharge6 = new javax.swing.JTextField();
+        jTextFieldCharge7 = new javax.swing.JTextField();
+        jTextFieldCharge8 = new javax.swing.JTextField();
+        jTextFieldCharge9 = new javax.swing.JTextField();
+        jTextFieldCharge10 = new javax.swing.JTextField();
+        jTextFieldCharge11 = new javax.swing.JTextField();
+        jTextFieldCharge12 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(70, 70, 70));
@@ -333,6 +429,60 @@ public class QuotazioniUI extends javax.swing.JFrame {
 
         jComboBoxRinnovo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
 
+        jTextFieldCash1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCash2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCash3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCash4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCash5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCash6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCash7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCash8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCash9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCash10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCash11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCash12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTextFieldCharge12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Cassa");
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("MI");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -380,7 +530,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 14, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jComboBoxScadenza, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -388,37 +538,187 @@ public class QuotazioniUI extends javax.swing.JFrame {
                             .addComponent(jComboBoxRinnovo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jScrollPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buttonApply, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(buttonApply, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldT12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                            .addComponent(jTextFieldT11, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextFieldT10, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextFieldT9, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextFieldT8, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextFieldT7, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextFieldT6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextFieldT5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextFieldT1)
+                            .addComponent(jTextFieldT3)
+                            .addComponent(jTextFieldT2)
+                            .addComponent(jTextFieldT4))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                    .addGroup(layout.createSequentialGroup()
+                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                                                                            .addComponent(jTextFieldCash1))
+                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                            .addGroup(layout.createSequentialGroup()
+                                                                                .addGap(18, 18, 18)
+                                                                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                            .addGroup(layout.createSequentialGroup()
+                                                                                .addGap(18, 18, 18)
+                                                                                .addComponent(jTextFieldCharge1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                        .addComponent(jTextFieldCash2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addGap(18, 18, 18)
+                                                                        .addComponent(jTextFieldCharge2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                    .addComponent(jTextFieldCash3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                    .addGap(18, 18, 18)
+                                                                    .addComponent(jTextFieldCharge3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addComponent(jTextFieldCash4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(jTextFieldCharge4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                            .addComponent(jTextFieldCash5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGap(18, 18, 18)
+                                                            .addComponent(jTextFieldCharge5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                        .addComponent(jTextFieldCash6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(jTextFieldCharge6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                    .addComponent(jTextFieldCash7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(jTextFieldCharge7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jTextFieldCash8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jTextFieldCharge8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(jTextFieldCash9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jTextFieldCharge9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jTextFieldCash10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldCharge10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jTextFieldCash11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jTextFieldCharge11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jTextFieldCash12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldCharge12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonSafeReconnect, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonLoad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                            .addComponent(jButtonLocal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonExtract, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(togglePortieri)
-                        .addGap(18, 18, 18)
-                        .addComponent(toggleDifensori)
-                        .addGap(18, 18, 18)
-                        .addComponent(toggleCentro)
-                        .addGap(18, 18, 18)
-                        .addComponent(toggleAttaccanti)
-                        .addGap(18, 18, 18)
-                        .addComponent(toggleAll)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButtonSafeReconnect, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonLoad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonLocal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonExtract, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(togglePortieri)
+                                .addGap(18, 18, 18)
+                                .addComponent(toggleDifensori)
+                                .addGap(18, 18, 18)
+                                .addComponent(toggleCentro)
+                                .addGap(18, 18, 18)
+                                .addComponent(toggleAttaccanti)
+                                .addGap(18, 18, 18)
+                                .addComponent(toggleAll)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldT12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCash12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCharge12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -443,6 +743,10 @@ public class QuotazioniUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+
+    
+    
     private void jButtonLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLocalActionPerformed
         this.togglePortieri.setEnabled(true);
         this.toggleDifensori.setEnabled(true);
@@ -487,7 +791,8 @@ public class QuotazioniUI extends javax.swing.JFrame {
     private void jButtonLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoadActionPerformed
 
         this.saveQuotes.loadPlayers();
-
+        this.saveQuotes.loadCash();
+        
         this.togglePortieri.setEnabled(true);
         this.toggleDifensori.setEnabled(true);
         this.toggleCentro.setEnabled(true);
@@ -550,7 +855,29 @@ public class QuotazioniUI extends javax.swing.JFrame {
     private void buttonApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonApplyActionPerformed
 
         DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
-
+            
+          
+        try{
+            int oldCash = this.cassaSquadre.get(this.jComboBox1.getSelectedItem().toString()).getCash();
+            this.cassaSquadre.get(this.jComboBox1.getSelectedItem().toString()).setCash(oldCash - Integer.parseInt(jTextFieldPrice.getText()));
+        }
+        catch(Exception e){
+            System.err.println(e);
+        }
+        
+        try{
+            int oldCharge = this.cassaSquadre.get(this.jComboBox1.getSelectedItem().toString()).getCharge();
+            this.cassaSquadre.get(this.jComboBox1.getSelectedItem().toString()).setCharge(oldCharge + Integer.parseInt(jTextFieldPrice.getText()));
+        }
+        catch(Exception e){
+            System.err.println(e);
+        }
+        try{
+        loadCashTeam();}
+        catch(Exception e){
+            System.err.println(e);
+        }
+        
         this.saveQuotes.deleteQuotes();
         this.buttonSave.setEnabled(true);
         for(List<Player> l : this.listaPlayers){
@@ -577,6 +904,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
     private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
 
         this.saveQuotes.saveQuotes(listaPlayers);
+        this.saveQuotes.saveCashes(cassaSquadre);
 
     }//GEN-LAST:event_buttonSaveActionPerformed
 
@@ -638,6 +966,12 @@ public class QuotazioniUI extends javax.swing.JFrame {
         });
     }
 
+     public HashMap<String, Cash> getCassaSquadre() {
+        return cassaSquadre;
+    }
+
+    
+   
     public  ArrayList<ArrayList<Player>> getListaPlayers() {
         return listaPlayers;
     }
@@ -664,16 +998,58 @@ public class QuotazioniUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldCash1;
+    private javax.swing.JTextField jTextFieldCash10;
+    private javax.swing.JTextField jTextFieldCash11;
+    private javax.swing.JTextField jTextFieldCash12;
+    private javax.swing.JTextField jTextFieldCash2;
+    private javax.swing.JTextField jTextFieldCash3;
+    private javax.swing.JTextField jTextFieldCash4;
+    private javax.swing.JTextField jTextFieldCash5;
+    private javax.swing.JTextField jTextFieldCash6;
+    private javax.swing.JTextField jTextFieldCash7;
+    private javax.swing.JTextField jTextFieldCash8;
+    private javax.swing.JTextField jTextFieldCash9;
+    private javax.swing.JTextField jTextFieldCharge1;
+    private javax.swing.JTextField jTextFieldCharge10;
+    private javax.swing.JTextField jTextFieldCharge11;
+    private javax.swing.JTextField jTextFieldCharge12;
+    private javax.swing.JTextField jTextFieldCharge2;
+    private javax.swing.JTextField jTextFieldCharge3;
+    private javax.swing.JTextField jTextFieldCharge4;
+    private javax.swing.JTextField jTextFieldCharge5;
+    private javax.swing.JTextField jTextFieldCharge6;
+    private javax.swing.JTextField jTextFieldCharge7;
+    private javax.swing.JTextField jTextFieldCharge8;
+    private javax.swing.JTextField jTextFieldCharge9;
     private javax.swing.JTextField jTextFieldPrice;
     private javax.swing.JTextField jTextFieldQuot;
     private javax.swing.JTextField jTextFieldSystem;
+    private javax.swing.JTextField jTextFieldT1;
+    private javax.swing.JTextField jTextFieldT10;
+    private javax.swing.JTextField jTextFieldT11;
+    private javax.swing.JTextField jTextFieldT12;
+    private javax.swing.JTextField jTextFieldT2;
+    private javax.swing.JTextField jTextFieldT3;
+    private javax.swing.JTextField jTextFieldT4;
+    private javax.swing.JTextField jTextFieldT5;
+    private javax.swing.JTextField jTextFieldT6;
+    private javax.swing.JTextField jTextFieldT7;
+    private javax.swing.JTextField jTextFieldT8;
+    private javax.swing.JTextField jTextFieldT9;
     private javax.swing.JToggleButton toggleAll;
     private javax.swing.JToggleButton toggleAttaccanti;
     private javax.swing.JToggleButton toggleCentro;
     private javax.swing.JToggleButton toggleDifensori;
     private javax.swing.JToggleButton togglePortieri;
     // End of variables declaration//GEN-END:variables
+
+    public void setCassaSquadre(HashMap<String, Cash> cashes) {
+        this.cassaSquadre = cashes; 
+    }
 }
