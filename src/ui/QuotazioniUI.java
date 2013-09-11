@@ -39,6 +39,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.saveQuotes = new SaveQuotes(this);
+        
         setLocationRelativeTo(null);
         
     }
@@ -760,6 +761,7 @@ public class QuotazioniUI extends javax.swing.JFrame {
         try {
             QuotazioniUI newQui = new QuotazioniUI();
             newQui.setListaPlayers(listaPlayers);
+            newQui.setCassaSquadre(cassaSquadre);
             newQui.show();
             this.dispose();
         } catch (IOException ex) {

@@ -11,11 +11,13 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Cash;
+import model.Formation;
 import model.Player;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import ui.QuotazioniUI;
+import ui.VotesUI;
 
 /**
  *
@@ -26,14 +28,19 @@ public class SaveQuotes {
     private Socket socket;
     private  ArrayList<ArrayList<Player>> playerList;
     private HashMap<String, Cash> cashes;
+   
     private QuotazioniUI qui;
+ 
    
     public SaveQuotes(QuotazioniUI qui) {
+        
         this.playerList = new ArrayList<ArrayList<Player>>();
         this.cashes = new HashMap<String, Cash>();
         this.qui = qui;
         this.socket = new Socket(this);
     }
+    
+    
 
     
     public void saveCashes(HashMap<String, Cash> casse){
@@ -107,6 +114,8 @@ public class SaveQuotes {
         this.qui.setListaPlayers(playerList);
     }
     
+    
+    
     public void cashesLoaded(){
         this.qui.setCassaSquadre(cashes);
         this.qui.loadCashTeam();
@@ -142,5 +151,5 @@ public class SaveQuotes {
     public void setCashes(HashMap<String, Cash> cashes) {
         this.cashes = cashes;
     }
-    
+
 }

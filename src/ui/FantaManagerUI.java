@@ -95,7 +95,7 @@ public class FantaManagerUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 505, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,12 +123,14 @@ public class FantaManagerUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       VoteExtractor v = new VoteExtractor();
+       VotesUI vUI = null;
         try {
-            v.extractVotes();
+            vUI = new VotesUI();
         } catch (IOException ex) {
             Logger.getLogger(FantaManagerUI.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        vUI.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

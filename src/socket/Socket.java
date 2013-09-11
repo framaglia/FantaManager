@@ -20,6 +20,7 @@ import org.json.JSONObject;
 import extractor.NameComparatorByRole;
 import java.util.HashMap;
 import model.Cash;
+import model.Formation;
 
 
 
@@ -28,7 +29,8 @@ public class Socket implements IOCallback {
 	
 	private SocketIO socket;
         private SaveQuotes saveQuotes;
-
+        private SaveFormations saveFormations;
+        
 	public Socket()  {
         
 		socket = new SocketIO();
@@ -44,7 +46,8 @@ public class Socket implements IOCallback {
 	} 
 
 	public Socket(SaveQuotes saveQuotes)  {
-                this.saveQuotes = saveQuotes;
+                
+            this.saveQuotes = saveQuotes;
 		socket = new SocketIO();
                 
 		
@@ -57,6 +60,23 @@ public class Socket implements IOCallback {
 	
 		
 	} 
+        
+        public Socket(SaveFormations saveFormations)  {
+                
+            this.saveFormations = saveFormations;
+                
+		socket = new SocketIO();
+                
+		
+		try {
+			socket.connect("http://simpleservice.eu01.aws.af.cm", this);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		
+	}
 
 	public SocketIO getSocket() {
 		return socket;
@@ -85,7 +105,7 @@ public class Socket implements IOCallback {
 	public void onError(SocketIOException socketIOException) {
 		System.out.println("an Error occured");
 		socketIOException.printStackTrace();
-                this.saveQuotes.systemFail();
+                //this.saveQuotes.systemFail();
                 
 	}
 
@@ -97,7 +117,7 @@ public class Socket implements IOCallback {
 	@Override
 	public void onConnect() {
 		System.out.println("Connection established");
-                this.saveQuotes.systemOK();
+                //this.saveQuotes.systemOK();
 	}
 
 	@Override
@@ -248,6 +268,39 @@ public class Socket implements IOCallback {
                     this.saveQuotes.setPlayerList(players);
                     this.saveQuotes.playersLoaded();
                     
+                }
+                else if(event.equals("allFormations")){
+                    
+                    HashMap<String, Formation> allFormations = new HashMap<String, Formation>();
+                    JSONArray jsonArray = ((JSONArray) args[0]);
+                    for (int i = 0; i < jsonArray.length(); i++){
+                        Formation f = new Formation();
+                        try {
+                            String team = jsonArray.getJSONObject(i).getString("user");
+                            
+                           
+                            JSONArray arr = jsonArray.getJSONObject(i).getJSONArray("formation");
+                            for(int cont = 0; cont < arr.length(); cont++){
+                                Player p = new Player();
+                                p.setNome(arr.getString(cont));
+                                
+                                if(cont < 11){
+                                    f.getFormation().add(p);
+                                }
+                                else{
+                                    f.getBench().add(p);
+                                }
+                            }
+                                              
+                        allFormations.put(team, f);
+                       
+                        } catch (JSONException ex) {
+                            Logger.getLogger(Socket.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    
+                    this.saveFormations.setAllFormations(allFormations);
+                    this.saveFormations.formationsLoaded();
                 }
                 
                 

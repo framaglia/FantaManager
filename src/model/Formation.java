@@ -36,6 +36,7 @@ public class Formation {
 
     public Formation() {
         this.formation = new ArrayList<Player>();
+        this.bench = new ArrayList<Player>();
     }
     
     
