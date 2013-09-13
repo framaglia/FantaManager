@@ -8,14 +8,18 @@ import extractor.VoteExtractor;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.WindowConstants;
+import logic.CalculateScore;
 import model.Formation;
+import model.Match;
+import model.Player;
 import model.Vote;
-import socket.SaveFormations;
+import socket.LoadFormations;
 
 
 /**
@@ -27,20 +31,51 @@ public class VotesUI extends javax.swing.JFrame {
     /**
      * Creates new form VotesUI
      */
-    private VoteExtractor ve = new VoteExtractor();
-    private Map<String, Vote> votesMap = new HashMap<String,Vote>();
+    
+    //private Map<String, Vote> votesMap = new HashMap<String,Vote>();
     private Map<String, Formation> formationsMap = new HashMap<String,Formation>();
-    private SaveFormations saveFormations;
+    private List<Match> matches = new ArrayList<Match>();
+    private LoadFormations loadFormations;
+    private List<Player> rolePlayers;
+    private CalculateScore calculateScore;
+    private String path;
     
     public VotesUI() throws IOException {
         initComponents();
-        ve.extractVotes();
-        votesMap = ve.getVotes();
-        this.saveFormations = new SaveFormations(this);
+        setLocationRelativeTo(null);
+        this.loadFormations = new LoadFormations(this);
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.rolePlayers = new ArrayList<Player>();
+        this.path = "";
         
 
     }
+    
+    public void addRolesToFormations(){
+        
+        for(Formation f : formationsMap.values()) {
+            for(Player p : f.getFormation()) {
+                for(Player p1 : rolePlayers) {
+                    if(p.getNome().equals(p1.getNome())) {
+                        p.setRuolo(p1.getRuolo());
+                    }
+                }
+            }
+            for(Player p2 : f.getBench()) {
+                for(Player p3 : rolePlayers) {
+                    if(p2.getNome().equals(p3.getNome())) {
+                        p2.setRuolo(p3.getRuolo());
+                    }
+                }
+            }
+            
+        }
+        
+       
+ }
+           
+    
+   
     
     public void formationLoaded(){
         
@@ -62,8 +97,28 @@ public class VotesUI extends javax.swing.JFrame {
         this.jTextFieldFormation10.setText(teams.get(9));
         this.jTextFieldFormation11.setText(teams.get(10));
         this.jTextFieldFormation12.setText(teams.get(11));
+       
     }
 
+    public void matchesLoaded(){
+        this.jTextFieldHome1.setText(this.matches.get(0).getHomeTeam());
+        this.jTextFieldVisitor1.setText(this.matches.get(0).getAwayTeam());
+        this.jTextFieldHome2.setText(this.matches.get(1).getHomeTeam());
+        this.jTextFieldVisitor2.setText(this.matches.get(1).getAwayTeam());
+        this.jTextFieldHome3.setText(this.matches.get(2).getHomeTeam());
+        this.jTextFieldVisitor3.setText(this.matches.get(2).getAwayTeam());
+        this.jTextFieldHome4.setText(this.matches.get(3).getHomeTeam());
+        this.jTextFieldVisitor4.setText(this.matches.get(3).getAwayTeam());
+        this.jTextFieldHome5.setText(this.matches.get(4).getHomeTeam());
+        this.jTextFieldVisitor5.setText(this.matches.get(4).getAwayTeam());
+        this.jTextFieldHome6.setText(this.matches.get(5).getHomeTeam());
+        this.jTextFieldVisitor6.setText(this.matches.get(5).getAwayTeam());
+    }
+    
+    public void rolePlayersLoaded(){
+        addRolesToFormations();
+    }
+    
     public Map<String, Formation> getFormationsMap() {
         return formationsMap;
     }
@@ -72,10 +127,24 @@ public class VotesUI extends javax.swing.JFrame {
         this.formationsMap = formationsMap;
     }
 
+    public List<Player> getRolePlayers() {
+        return rolePlayers;
+    }
+
+    public void setRolePlayers(List<Player> rolePlayers) {
+        this.rolePlayers = rolePlayers;
+    }
+
     
 
-    public Map<String, Vote> getVotesMap() {
-        return votesMap;
+   
+
+    public List<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
     }
 
     /**
@@ -113,6 +182,31 @@ public class VotesUI extends javax.swing.JFrame {
         jButtonDetail10 = new javax.swing.JButton();
         jButtonDetail11 = new javax.swing.JButton();
         jButtonDetail12 = new javax.swing.JButton();
+        jButtonLoadCalendar = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
+        jTextFieldHome1 = new javax.swing.JTextField();
+        jTextFieldHome2 = new javax.swing.JTextField();
+        jTextFieldHome3 = new javax.swing.JTextField();
+        jTextFieldHome4 = new javax.swing.JTextField();
+        jTextFieldHome5 = new javax.swing.JTextField();
+        jTextFieldHome6 = new javax.swing.JTextField();
+        jTextFieldVisitor1 = new javax.swing.JTextField();
+        jTextFieldVisitor2 = new javax.swing.JTextField();
+        jTextFieldVisitor3 = new javax.swing.JTextField();
+        jTextFieldVisitor4 = new javax.swing.JTextField();
+        jTextFieldVisitor5 = new javax.swing.JTextField();
+        jTextFieldVisitor6 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jRadioButtonBonusHome = new javax.swing.JRadioButton();
+        jButtonCalculateScore = new javax.swing.JButton();
+        jFileChooser1 = new javax.swing.JFileChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,72 +217,84 @@ public class VotesUI extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldFormation1.setEditable(false);
         jTextFieldFormation1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation1ActionPerformed(evt);
             }
         });
 
+        jTextFieldFormation2.setEditable(false);
         jTextFieldFormation2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation2ActionPerformed(evt);
             }
         });
 
+        jTextFieldFormation3.setEditable(false);
         jTextFieldFormation3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation3ActionPerformed(evt);
             }
         });
 
+        jTextFieldFormation4.setEditable(false);
         jTextFieldFormation4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation4ActionPerformed(evt);
             }
         });
 
+        jTextFieldFormation5.setEditable(false);
         jTextFieldFormation5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation5ActionPerformed(evt);
             }
         });
 
+        jTextFieldFormation6.setEditable(false);
         jTextFieldFormation6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation6ActionPerformed(evt);
             }
         });
 
+        jTextFieldFormation7.setEditable(false);
         jTextFieldFormation7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation7ActionPerformed(evt);
             }
         });
 
+        jTextFieldFormation8.setEditable(false);
         jTextFieldFormation8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation8ActionPerformed(evt);
             }
         });
 
+        jTextFieldFormation9.setEditable(false);
         jTextFieldFormation9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation9ActionPerformed(evt);
             }
         });
 
+        jTextFieldFormation10.setEditable(false);
         jTextFieldFormation10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation10ActionPerformed(evt);
             }
         });
 
+        jTextFieldFormation11.setEditable(false);
         jTextFieldFormation11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation11ActionPerformed(evt);
             }
         });
 
+        jTextFieldFormation12.setEditable(false);
         jTextFieldFormation12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFormation12ActionPerformed(evt);
@@ -196,68 +302,240 @@ public class VotesUI extends javax.swing.JFrame {
         });
 
         jButtonDetail1.setText("Dettagli");
+        jButtonDetail1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail1ActionPerformed(evt);
+            }
+        });
 
         jButtonDetail2.setText("Dettagli");
+        jButtonDetail2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail2ActionPerformed(evt);
+            }
+        });
 
         jButtonDetail3.setText("Dettagli");
+        jButtonDetail3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail3ActionPerformed(evt);
+            }
+        });
 
         jButtonDetail4.setText("Dettagli");
+        jButtonDetail4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail4ActionPerformed(evt);
+            }
+        });
 
         jButtonDetail5.setText("Dettagli");
+        jButtonDetail5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail5ActionPerformed(evt);
+            }
+        });
 
         jButtonDetail6.setText("Dettagli");
+        jButtonDetail6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail6ActionPerformed(evt);
+            }
+        });
 
         jButtonDetail7.setText("Dettagli");
+        jButtonDetail7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail7ActionPerformed(evt);
+            }
+        });
 
         jButtonDetail8.setText("Dettagli");
+        jButtonDetail8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail8ActionPerformed(evt);
+            }
+        });
 
         jButtonDetail9.setText("Dettagli");
+        jButtonDetail9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail9ActionPerformed(evt);
+            }
+        });
 
         jButtonDetail10.setText("Dettagli");
+        jButtonDetail10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail10ActionPerformed(evt);
+            }
+        });
 
         jButtonDetail11.setText("Dettagli");
+        jButtonDetail11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail11ActionPerformed(evt);
+            }
+        });
 
         jButtonDetail12.setText("Dettagli");
+        jButtonDetail12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetail12ActionPerformed(evt);
+            }
+        });
+
+        jButtonLoadCalendar.setText("Carica Calendario");
+        jButtonLoadCalendar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoadCalendarActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33" }));
+
+        jTextFieldHome1.setEditable(false);
+
+        jTextFieldHome2.setEditable(false);
+
+        jTextFieldHome3.setEditable(false);
+
+        jTextFieldHome4.setEditable(false);
+
+        jTextFieldHome5.setEditable(false);
+
+        jTextFieldHome6.setEditable(false);
+
+        jTextFieldVisitor1.setEditable(false);
+
+        jTextFieldVisitor2.setEditable(false);
+
+        jTextFieldVisitor3.setEditable(false);
+
+        jTextFieldVisitor4.setEditable(false);
+
+        jTextFieldVisitor5.setEditable(false);
+
+        jTextFieldVisitor6.setEditable(false);
+
+        jLabel1.setText("vs");
+
+        jLabel2.setText("vs");
+
+        jLabel3.setText("vs");
+
+        jLabel4.setText("vs");
+
+        jLabel5.setText("vs");
+
+        jLabel6.setText("vs");
+
+        jLabel7.setText("Casa");
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Trasferta");
+
+        jRadioButtonBonusHome.setSelected(true);
+        jRadioButtonBonusHome.setText("Bonus Casa");
+
+        jButtonCalculateScore.setBackground(new java.awt.Color(1, 172, 154));
+        jButtonCalculateScore.setText("Calcola");
+        jButtonCalculateScore.setEnabled(false);
+        jButtonCalculateScore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCalculateScoreActionPerformed(evt);
+            }
+        });
+
+        jFileChooser1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFileChooser1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jButtonLoadFormations)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 533, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextFieldFormation6, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonDetail6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonLoadCalendar))
+                            .addComponent(jButtonLoadFormations, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonCalculateScore, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextFieldFormation4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonDetail5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(53, 53, 53)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButtonBonusHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextFieldHome1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldHome2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldHome3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldHome4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldHome5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldHome6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel6)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addComponent(jLabel7)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldVisitor6)
+                                    .addComponent(jTextFieldVisitor5)
+                                    .addComponent(jTextFieldVisitor4)
+                                    .addComponent(jTextFieldVisitor3)
+                                    .addComponent(jTextFieldVisitor2)
+                                    .addComponent(jTextFieldVisitor1))))))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jTextFieldFormation12, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonDetail12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextFieldFormation11, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldFormation6, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonDetail10, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonDetail6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTextFieldFormation5, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonDetail5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jTextFieldFormation10, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
+                        .addComponent(jButtonDetail10, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTextFieldFormation11, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jButtonDetail11, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextFieldFormation9, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldFormation7, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonDetail7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextFieldFormation8, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldFormation9, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonDetail9, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextFieldFormation7, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldFormation8, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonDetail8, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -273,71 +551,123 @@ public class VotesUI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButtonDetail1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextFieldFormation5, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldFormation4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonDetail4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(81, 81, 81))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jButtonLoadFormations, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldHome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldVisitor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldHome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldVisitor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldHome3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldVisitor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldHome4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldVisitor4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldHome5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldVisitor5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldHome6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldVisitor6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addComponent(jButtonDetail1))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jTextFieldFormation1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldFormation2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButtonDetail2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldFormation3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButtonDetail3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButtonDetail4)
+                                    .addComponent(jTextFieldFormation4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButtonDetail5)
+                                    .addComponent(jTextFieldFormation5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldFormation6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButtonDetail6))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButtonDetail7)
+                                    .addComponent(jTextFieldFormation7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(12, 12, 12)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButtonDetail8)
+                                    .addComponent(jTextFieldFormation8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButtonDetail9)
+                                    .addComponent(jTextFieldFormation9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButtonDetail10)
+                                    .addComponent(jTextFieldFormation10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(jButtonDetail1))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jTextFieldFormation1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFormation2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetail2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFormation3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetail3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFormation5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetail4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFormation4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetail5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFormation6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetail6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFormation9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetail7))
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFormation7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetail8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFormation8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetail9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFormation11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetail10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFormation10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetail11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFormation12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetail12))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButtonDetail11)
+                                    .addComponent(jTextFieldFormation11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldFormation12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButtonDetail12)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(jRadioButtonBonusHome)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonCalculateScore, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButtonLoadFormations, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButtonLoadCalendar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -348,18 +678,19 @@ public class VotesUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonLoadFormationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoadFormationsActionPerformed
-        this.saveFormations.getFormationsByDB();
+        this.loadFormations.getFormationsByDB();
+        this.loadFormations.getrolePlayersByDB();
     }//GEN-LAST:event_jButtonLoadFormationsActionPerformed
 
     private void jTextFieldFormation1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFormation1ActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jTextFieldFormation1ActionPerformed
 
     private void jTextFieldFormation2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFormation2ActionPerformed
@@ -406,6 +737,141 @@ public class VotesUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldFormation12ActionPerformed
 
+    private void jButtonDetail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail1ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation1.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail1ActionPerformed
+
+    private void jButtonDetail2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail2ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation2.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail2ActionPerformed
+
+    private void jButtonDetail3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail3ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation3.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail3ActionPerformed
+
+    private void jButtonDetail4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail4ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation4.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail4ActionPerformed
+
+    private void jButtonDetail5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail5ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation5.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail5ActionPerformed
+
+    private void jButtonDetail6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail6ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation6.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail6ActionPerformed
+
+    private void jButtonDetail7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail7ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation7.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail7ActionPerformed
+
+    private void jButtonDetail8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail8ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation8.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail8ActionPerformed
+
+    private void jButtonDetail9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail9ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation9.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail9ActionPerformed
+
+    private void jButtonDetail10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail10ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation10.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail10ActionPerformed
+
+    private void jButtonDetail11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail11ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation11.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail11ActionPerformed
+
+    private void jButtonDetail12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail12ActionPerformed
+        DetailFormation df = new DetailFormation();
+        
+        df.setFormation(this.formationsMap.get(this.jTextFieldFormation12.getText().toString()));
+        df.loadFormation();
+        df.show();
+    }//GEN-LAST:event_jButtonDetail12ActionPerformed
+
+    private void jButtonLoadCalendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoadCalendarActionPerformed
+        this.loadFormations.getCalendarDay(this.jComboBox1.getSelectedIndex()+1);
+    }//GEN-LAST:event_jButtonLoadCalendarActionPerformed
+
+    private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
+        this.path = this.jFileChooser1.getSelectedFile().getAbsolutePath();
+        System.out.println(this.jFileChooser1.getSelectedFile().getAbsolutePath());
+        this.jButtonCalculateScore.setEnabled(true);
+    }//GEN-LAST:event_jFileChooser1ActionPerformed
+
+    private void jButtonCalculateScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalculateScoreActionPerformed
+        
+           
+            this.calculateScore = new CalculateScore(this.jRadioButtonBonusHome.isSelected(),this.path, this.matches);
+            for(Match m : matches) {
+                try {
+                    //System.out.println(this.formationsMap.get(m.getHomeTeam()).getFormation());
+                    calculateScore.calculate(m.getHomeTeam(), this.formationsMap.get(m.getHomeTeam()));
+                    calculateScore.calculate(m.getAwayTeam(), this.formationsMap.get(m.getAwayTeam()));
+                } catch (IOException ex) {
+                    Logger.getLogger(VotesUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            for(Match m : matches) {
+                System.out.print(m.getHomeTeam()+"-"+m.getAwayTeam()+"="+m.getGolHome() + "-" + m.getGolAway() + "(" + m.getScoreHome() + "-" + m.getScoreAway() + ")" );
+                for(Player p : m.getUsedFormationAway().getFormation()){
+                    try{
+                        System.out.println(p.getNome());
+                    }
+                    catch(Exception e){
+                        System.out.println("Non c'è");
+                    }
+                }
+                System.out.println("");
+            }
+            
+       
+    }//GEN-LAST:event_jButtonCalculateScoreActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -445,6 +911,7 @@ public class VotesUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCalculateScore;
     private javax.swing.JButton jButtonDetail1;
     private javax.swing.JButton jButtonDetail10;
     private javax.swing.JButton jButtonDetail11;
@@ -457,8 +924,20 @@ public class VotesUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtonDetail7;
     private javax.swing.JButton jButtonDetail8;
     private javax.swing.JButton jButtonDetail9;
+    private javax.swing.JButton jButtonLoadCalendar;
     private javax.swing.JButton jButtonLoadFormations;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JFileChooser jFileChooser1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButtonBonusHome;
     private javax.swing.JTextField jTextFieldFormation1;
     private javax.swing.JTextField jTextFieldFormation10;
     private javax.swing.JTextField jTextFieldFormation11;
@@ -471,5 +950,17 @@ public class VotesUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldFormation7;
     private javax.swing.JTextField jTextFieldFormation8;
     private javax.swing.JTextField jTextFieldFormation9;
+    private javax.swing.JTextField jTextFieldHome1;
+    private javax.swing.JTextField jTextFieldHome2;
+    private javax.swing.JTextField jTextFieldHome3;
+    private javax.swing.JTextField jTextFieldHome4;
+    private javax.swing.JTextField jTextFieldHome5;
+    private javax.swing.JTextField jTextFieldHome6;
+    private javax.swing.JTextField jTextFieldVisitor1;
+    private javax.swing.JTextField jTextFieldVisitor2;
+    private javax.swing.JTextField jTextFieldVisitor3;
+    private javax.swing.JTextField jTextFieldVisitor4;
+    private javax.swing.JTextField jTextFieldVisitor5;
+    private javax.swing.JTextField jTextFieldVisitor6;
     // End of variables declaration//GEN-END:variables
 }

@@ -20,19 +20,34 @@ import org.jsoup.select.Elements;
 public class VoteExtractor {
 
     private HashMap<String, Vote> votes = new HashMap<String, Vote>();
+    private String pathToFile;
 
+    public VoteExtractor(String path){
+        this.pathToFile = path;
+        
+    }
+    
+    public String getPathToFile() {
+        return pathToFile;
+    }
+
+    public void setPathToFile(String pathToFile) {
+        this.pathToFile = pathToFile;
+    }
+    
     public HashMap<String, Vote> getVotes() {
         return votes;
     }
-
+    
+    
     public void extractVotes() throws IOException {
 
 
-        File dir = new File("/home/kix/Documenti/fantaDoc/voti");
+        File fileToParse = new File(this.pathToFile);
 
-        for (File child : dir.listFiles()) {
+        
 
-            Document document2parse = Jsoup.parse(child, "UTF-8");
+            Document document2parse = Jsoup.parse(fileToParse, "UTF-8");
             Elements allVotes = document2parse.getElementsByTag("tbody");
 
             for (Element el : allVotes) {
@@ -145,7 +160,7 @@ public class VoteExtractor {
                             else if(cleaned[0].equals("A"))
                                 ruolo = "attaccante";
                             
-                            name = cleaned[1].concat(" " + cleaned[2].toString()).toString();
+                            name = cleaned[1].concat(" " + cleaned[2].toString()).toString() + " ";
                             gf = cleaned[4].toString();
                             gr = cleaned[5].toString();
                             gs = cleaned[6].toString();
@@ -212,7 +227,7 @@ public class VoteExtractor {
                 }
             }
 
-        }
+        
 
 
 

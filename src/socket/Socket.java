@@ -19,8 +19,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import extractor.NameComparatorByRole;
 import java.util.HashMap;
+import java.util.List;
 import model.Cash;
 import model.Formation;
+import model.Match;
 
 
 
@@ -29,7 +31,7 @@ public class Socket implements IOCallback {
 	
 	private SocketIO socket;
         private SaveQuotes saveQuotes;
-        private SaveFormations saveFormations;
+        private LoadFormations loadFormations;
         
 	public Socket()  {
         
@@ -61,9 +63,9 @@ public class Socket implements IOCallback {
 		
 	} 
         
-        public Socket(SaveFormations saveFormations)  {
+        public Socket(LoadFormations saveFormations)  {
                 
-            this.saveFormations = saveFormations;
+            this.loadFormations = saveFormations;
                 
 		socket = new SocketIO();
                 
@@ -280,6 +282,7 @@ public class Socket implements IOCallback {
                             
                            
                             JSONArray arr = jsonArray.getJSONObject(i).getJSONArray("formation");
+                            
                             for(int cont = 0; cont < arr.length(); cont++){
                                 Player p = new Player();
                                 p.setNome(arr.getString(cont));
@@ -299,8 +302,59 @@ public class Socket implements IOCallback {
                         }
                     }
                     
-                    this.saveFormations.setAllFormations(allFormations);
-                    this.saveFormations.formationsLoaded();
+                    this.loadFormations.setAllFormations(allFormations);
+                    this.loadFormations.formationsLoaded();
+                }
+                
+                else if(event.equals("calendarDay")){
+                    JSONArray jsonArray = ((JSONArray) args[0]);
+                    ArrayList<Match> matches = new ArrayList<Match>();
+                    for (int i = 0; i < jsonArray.length(); i++){
+                        try {
+                            JSONArray arr = jsonArray.getJSONObject(i).getJSONArray("matches");
+                            for(int cont = 0; cont < arr.length(); cont++){
+                                
+                                String[] s = arr.getString(cont).split("-");
+                                String home = s[0];
+                                home = stringTeamClean(home);
+                                String visitor = s[1];
+                                visitor = stringTeamClean(visitor);
+                                Match m = new Match();
+                                m.setHomeTeam(home);
+                                m.setAwayTeam(visitor);
+                                matches.add(m);
+                        }
+                            this.loadFormations.setMatches(matches);
+                            this.loadFormations.matchesLoaded();
+                        } catch (JSONException ex) {
+                            Logger.getLogger(Socket.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                }
+                
+                else if(event.equals("rolePlayers")){
+                    //System.out.println("arrivati");
+                    
+                    JSONArray jsonArray = ((JSONArray) args[0]);
+                    //System.out.println(jsonArray.toString());
+                    for (int i = 0; i < jsonArray.length(); i++){
+                        try {
+                            String role = jsonArray.getJSONObject(i).getString("ruolo").toString();
+                            String name = jsonArray.getJSONObject(i).getString("name").toString();
+                            String fantaTeam = jsonArray.getJSONObject(i).getString("fantaTeam").toString();
+                            Player p = new Player();
+                            p.setNome(name);
+                            p.setRuolo(role);
+                            p.setFantaTeam(fantaTeam);
+                            this.loadFormations.getRolePlayers().add(p);
+                            
+                            
+                        } catch (JSONException ex) {
+                            Logger.getLogger(Socket.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    this.loadFormations.setTeamLoaded(this.loadFormations.getTeamLoaded()+1);
+                    this.loadFormations.teamLoaded();
                 }
                 
                 
@@ -322,7 +376,39 @@ public class Socket implements IOCallback {
                     int cleaned = Integer.parseInt(cleanedString);
                     return cleaned;
                 }
-   
+      
+      public String stringTeamClean(String toClean){
+          String copy = toClean;
+          String trimmed = copy.trim();
+          String cleaned;
+          cleaned = trimmed.toLowerCase();
+          String matched;
+          if (cleaned.startsWith("acd"))
+              matched = "acdc";
+          else if(cleaned.startsWith("y"))
+              matched = "acybris";
+          else if(cleaned.startsWith("cs"))
+              matched = "cska";
+          else if(cleaned.startsWith("dl"))
+              matched = "dlc";
+          else if(cleaned.startsWith("gp"))
+              matched = "gpsundergland";
+          else if(cleaned.startsWith("par"))
+              matched = "paris";
+          else if(cleaned.startsWith("fel"))
+              matched = "felix";
+          else if(cleaned.startsWith("tcc"))
+              matched = "tccfc";
+          else if(cleaned.startsWith("vt"))
+              matched = "vts";
+          else if(cleaned.startsWith("tro"))
+              matched = "astronzo";
+          else if(cleaned.startsWith("fanf"))
+              matched = "fanfulla";
+          else matched = "fantaroma";
+          
+          return matched;
+      }
         
 }
 	
