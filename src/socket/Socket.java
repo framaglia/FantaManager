@@ -125,27 +125,7 @@ public class Socket implements IOCallback {
 	@Override
 	public void on(String event, IOAcknowledge ack, Object... args) {
 		
-		if (event.equals("startStorm")){
-			try {
-				JSONObject json = ((JSONObject) args[0]);
-				System.out.println(event + " " + json.getString("cat"));
-				try {
-					
-					String category = json.getString("cat");
-					
-				
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-                
-                else if(event.equals("deleted")){
+		if(event.equals("deleted")){
                     
                     System.out.println("Players deleted");
                 }

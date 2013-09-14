@@ -1,0 +1,2627 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="9" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jButtonDetailH1" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="jButtonDetailH2" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="jButtonDetailH3" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="jButtonDetailH4" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="jButtonDetailH5" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="jButtonDetailH6" min="-2" pref="105" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel1" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Component id="jTextFieldHome6" min="-2" pref="123" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldHome5" min="-2" pref="123" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldHome4" min="-2" pref="123" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldHome3" min="-2" pref="123" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldHome2" min="-2" pref="123" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="jTextFieldHome1" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jTextFieldMPH2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldMPH3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldMPH4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldMPH5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldMPH6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldMPH1" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jTextFieldGolH1" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGolH2" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGolH3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGolH4" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGolH5" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGolH6" min="-2" pref="38" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jTextFieldGolA4" max="32767" attributes="0"/>
+                              <Component id="jTextFieldGolA3" max="32767" attributes="0"/>
+                              <Component id="jTextFieldGolA2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldGolA5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldGolA6" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGolA1" min="-2" pref="38" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jTextFieldMPA2" alignment="0" pref="48" max="32767" attributes="0"/>
+                              <Component id="jTextFieldMPA3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldMPA4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldMPA5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldMPA1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldMPA6" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldAway3" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButtonDetailA3" min="-2" pref="105" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldAway2" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButtonDetailA2" min="-2" pref="105" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldAway1" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButtonDetailA1" min="-2" pref="105" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldAway4" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButtonDetailA4" min="-2" pref="105" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldAway5" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButtonDetailA5" min="-2" pref="105" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldAway6" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButtonDetailA6" min="-2" pref="105" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel2" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jButtonUpdateScores" min="-2" pref="279" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel10" min="-2" pref="123" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <Component id="jLabel19" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jTextFieldB7" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="jTextFieldB6" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="jTextFieldB5" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="jTextFieldB4" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="jTextFieldB3" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="jTextFieldB1" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="jTextFieldB2" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="jTextFieldP10" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="jTextFieldP9" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jTextFieldP4" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldP3" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldP1" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldP2" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldP5" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldP6" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldP7" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldP8" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jTextFieldP11" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jTextFieldGf1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf2" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf4" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf5" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf6" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf7" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf8" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf9" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf10" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf11" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf12" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf13" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf14" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf15" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf16" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf17" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTextFieldGf18" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldGr2" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGs2" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldRp2" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldRs2" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAu2" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAs2" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxAm2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxEs2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldGr3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGs3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldRp3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldRs3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAu3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAs3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxAm3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxEs3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jTextFieldGr4" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldGr6" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldGr7" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldGr8" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldGr9" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldGr10" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldGr11" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldGr12" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldGr17" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                              <Component id="jTextFieldGr16" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGr18" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jTextFieldGr5" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldGr13" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jTextFieldGr14" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldGr15" min="-2" pref="30" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="jTextFieldGs6" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGs4" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGs12" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGs10" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGs11" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGs9" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGs8" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGs7" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGs17" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                  <Component id="jTextFieldGs18" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGs13" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jTextFieldGs5" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jTextFieldRp5" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs5" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu5" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs5" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm5" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs5" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jTextFieldRp6" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs6" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu6" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs6" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm6" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs6" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jTextFieldRp7" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs7" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu7" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs7" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm7" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs7" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jTextFieldRp8" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs8" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu8" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs8" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm8" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs8" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jTextFieldRp9" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs9" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu9" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs9" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm9" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs9" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jTextFieldRp10" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs10" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu10" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs10" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm10" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs10" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jTextFieldRp11" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs11" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu11" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs11" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm11" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs11" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jTextFieldRp12" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs12" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu12" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs12" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm12" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs12" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jTextFieldRp13" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs13" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu13" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs13" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm13" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs13" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jTextFieldRp17" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs17" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu17" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs17" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm17" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs17" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jTextFieldRp18" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs18" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu18" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs18" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm18" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs18" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jTextFieldRp4" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs4" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu4" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs4" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxAm4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs4" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jTextFieldGs14" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRp14" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRs14" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAu14" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAs14" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jCheckBoxAm14" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jCheckBoxEs14" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jTextFieldGs15" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRp15" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRs15" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAu15" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAs15" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jCheckBoxAm15" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jCheckBoxEs15" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jTextFieldGs16" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRp16" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRs16" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAu16" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAs16" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jCheckBoxAm16" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jCheckBoxEs16" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldGr1" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGs1" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldRp1" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldRs1" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAu1" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAs1" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxAm1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxEs1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldV2" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButtonApply2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldV3" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButtonApply3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldV6" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButtonApply6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldV7" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButtonApply7" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldV8" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButtonApply8" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldV9" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButtonApply9" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldV10" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButtonApply10" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldV11" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButtonApply11" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextFieldV18" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldV17" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldV16" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldV15" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldV14" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldV13" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldV12" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jTextFieldV4" min="-2" pref="45" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jButtonApply4" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jTextFieldV5" min="-2" pref="45" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jButtonApply5" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jTextFieldV1" min="-2" pref="45" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jButtonApply1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jCheckBoxAm1" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldGr1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGs1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRp1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jCheckBoxEs1" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldGr2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGs2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRp2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jCheckBoxEs2" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="jCheckBoxAm2" min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jTextFieldGr3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldGs3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRp3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRs3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAu3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAs3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jCheckBoxEs3" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="jCheckBoxAm3" min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldGr4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGr5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGr6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jTextFieldGs4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRp4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRs4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAu4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAs4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jCheckBoxAm4" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="jCheckBoxEs4" min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jTextFieldGs5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRp5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRs5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAu5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAs5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jCheckBoxAm5" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="jCheckBoxEs5" min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jTextFieldGs6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRp6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRs6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAu6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAs6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jCheckBoxAm6" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="jCheckBoxEs6" min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldGr7" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGr8" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGr9" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGr10" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jTextFieldGr11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldGs11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldRp11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <Group type="103" groupAlignment="1" attributes="0">
+                                                              <Group type="102" attributes="0">
+                                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                                      <Group type="103" groupAlignment="3" attributes="0">
+                                                                          <Component id="jTextFieldGs7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jTextFieldRp7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jTextFieldRs7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jTextFieldAu7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jTextFieldAs7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Component id="jCheckBoxAm7" min="-2" pref="28" max="-2" attributes="0"/>
+                                                                      <Component id="jCheckBoxEs7" min="-2" pref="28" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <EmptySpace max="-2" attributes="0"/>
+                                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                                      <Group type="103" groupAlignment="3" attributes="0">
+                                                                          <Component id="jTextFieldGs8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jTextFieldRp8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jTextFieldRs8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jTextFieldAu8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jTextFieldAs8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Component id="jCheckBoxEs8" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                              </Group>
+                                                              <Component id="jCheckBoxAm8" min="-2" pref="28" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                                  <Component id="jTextFieldGs9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jTextFieldRp9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jTextFieldRs9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jTextFieldAu9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jTextFieldAs9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <Component id="jCheckBoxEs9" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Component id="jCheckBoxAm9" min="-2" pref="28" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="3" attributes="0">
+                                                          <Component id="jTextFieldGs10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jTextFieldRp10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jTextFieldRs10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jTextFieldAu10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jTextFieldAs10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jCheckBoxEs10" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Component id="jCheckBoxAm10" min="-2" pref="28" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldRs11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jCheckBoxEs11" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="jCheckBoxAm11" min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                          <Component id="jTextFieldGs12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRp12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldRs12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAu12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldAs12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jCheckBoxAm12" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="jCheckBoxEs12" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldGr13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGs13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldRp13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldRs13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAu13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAs13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jCheckBoxAm13" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="jCheckBoxEs13" min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jTextFieldGr17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldGs17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldRp17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldRs17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldAu17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldAs17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jCheckBoxEs17" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jCheckBoxAm17" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldGr18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGs18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldRp18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldRs18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAu18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAs18" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jCheckBoxAm18" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="jCheckBoxEs18" min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldP1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldP2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldP3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldP4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldP5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldP6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldP7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldP8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldP9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldP10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldP11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldV1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButtonApply1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldV2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButtonApply2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldV3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButtonApply3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldV4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButtonApply4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldV5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButtonApply5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldV6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButtonApply6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldV7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButtonApply7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldV8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButtonApply8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldV9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButtonApply9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldV10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButtonApply10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldV11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButtonApply11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jTextFieldV12" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldV13" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldV14" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldV15" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldV16" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldV17" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldV18" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldB1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGr12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextFieldB2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldGf13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldB3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGf14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGr14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldGs14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRp14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jCheckBoxAm14" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
+                                              <Component id="jCheckBoxEs14" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldB4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGf15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGr15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldGs15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRp15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldRs15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAu15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAs15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jCheckBoxAm15" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
+                                              <Component id="jCheckBoxEs15" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="3" attributes="0">
+                                                      <Component id="jTextFieldB5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldGf16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldGr16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="3" attributes="0">
+                                                      <Component id="jTextFieldB6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldGf17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="3" attributes="0">
+                                                      <Component id="jTextFieldB7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldGf18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                                      <Component id="jTextFieldGs16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldRp16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldRs16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldAu16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldAs16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jCheckBoxAm16" min="-2" pref="28" max="-2" attributes="0"/>
+                                                  <Component id="jCheckBoxEs16" min="-2" pref="28" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jTextFieldMPA1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldMPA2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldMPA3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldMPA4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldMPA5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldMPA6" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jTextFieldMPH1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldMPH2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldMPH3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldMPH4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldMPH5" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldMPH6" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldHome1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAway1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailA1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailH1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolH1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolA1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldHome2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAway2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailA2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailH2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolH2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolA2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldHome3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAway3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailA3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailH3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolH3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolA3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldHome4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAway4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailA4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailH4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolH4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolA4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldHome5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAway5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailA5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailH5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolH5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolA5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jTextFieldHome6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldAway6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailA6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButtonDetailH6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolH6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldGolA6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="jButtonUpdateScores" min="-2" pref="58" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="jTextFieldHome1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldHome2">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldHome3">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldHome4">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldHome5">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldHome6">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAway1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAway2">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAway3">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAway4">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAway5">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAway6">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Casa"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Trasferta"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="-"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="-"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="-"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="-"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="-"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="-"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailA1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailA1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailA2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailA2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailA3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailA3ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailA4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailA4ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailA5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailA5ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailA6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailA6ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailH1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailH1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailH2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailH2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailH3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailH3ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailH4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailH4ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailH5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailH5ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDetailH6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dettagli"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDetailH6ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolH1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolH2">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolH3">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolH4">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolH5">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolH6">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolA1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolA2">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolA3">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolA4">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolA5">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGolA6">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPH1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPH2">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPH3">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPH4">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPH5">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPH6">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPA1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPA2">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPA3">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPA4">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPA5">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldMPA6">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldP1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldP2">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldP3">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldP4">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldP5">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldP6">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldP7">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldP8">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldP9">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldP10">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldP11">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldB1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldB2">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldB3">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldB4">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldB5">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldB6">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldB7">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Nome"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf1">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf2">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf3">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf4">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf5">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf6">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf7">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf8">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf9">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf10">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf11">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf12">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf13">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf14">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf15">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf16">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf17">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGf18">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr1">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr2">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr3">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr4">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr5">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr6">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr7">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr8">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr9">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr10">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr11">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr12">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr13">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr14">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr15">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr16">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr17">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGr18">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs1">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs2">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs3">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs4">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs5">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs6">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs7">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs8">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs9">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs10">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs11">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs12">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs13">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs14">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs15">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs16">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs17">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldGs18">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp1">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp2">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp3">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp4">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp5">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp6">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp7">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp8">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp9">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp10">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp11">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp12">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp13">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp14">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp15">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp16">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp17">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRp18">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs1">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs2">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs3">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs4">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs5">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs6">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs7">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs8">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs9">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs10">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs11">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs12">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs13">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs14">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs15">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs16">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs17">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRs18">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu1">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu2">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu3">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu4">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu5">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu6">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu7">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu8">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu9">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu10">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu11">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu12">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu13">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu14">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu15">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu16">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu17">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAu18">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs1">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs2">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs3">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs4">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs5">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs6">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs7">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs8">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs9">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs10">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs11">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs12">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs13">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs14">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs15">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs16">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs17">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAs18">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV1">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV2">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV3">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV4">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV5">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV6">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV7">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV8">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV9">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldV9ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV10">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldV10ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV11">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldV11ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV12">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldV12ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV13">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldV13ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV14">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldV14ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV15">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldV15ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV16">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldV16ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV17">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldV17ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldV18">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldV18ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm1">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm2">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm3">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm4">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm5">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm6">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm7">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm8">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm9">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm10">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm11">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm12">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm13">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm14">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm15">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm16">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm17">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxAm18">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs1">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs2">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs3">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs4">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs5">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs6">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs7">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs8">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs9">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs10">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs11">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs12">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs13">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs14">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs15">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs16">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs17">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxEs18">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gf"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gr"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gs"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Rp"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel14">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Rs"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel15">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Au"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel16">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="As"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel17">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Am"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel18">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Es"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel19">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Voto"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonApply1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Applica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApply1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonApply2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Applica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApply2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonApply3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Applica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApply3ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonApply4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Applica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApply4ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonApply5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Applica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApply5ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonApply6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Applica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApply6ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonApply7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Applica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApply7ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonApply8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Applica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApply8ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonApply9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Applica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApply9ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonApply10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Applica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApply10ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonApply11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Applica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApply11ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonUpdateScores">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fd" green="a3" red="3f" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Aggiorna"/>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonUpdateScoresActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

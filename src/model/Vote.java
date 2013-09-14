@@ -21,19 +21,13 @@ public class Vote {
     private boolean am;
     private boolean es;
     private double vote;
-    private String ruolo;
+    
     
     public Vote(){
         
     }
 
-    public String getRuolo() {
-        return ruolo;
-    }
-
-    public void setRuolo(String ruolo) {
-        this.ruolo = ruolo;
-    }
+    
 
     public boolean isAm() {
         return am;

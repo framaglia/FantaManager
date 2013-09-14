@@ -67,7 +67,7 @@ public class VoteExtractor {
                     String au;
                     String as;
                     String vi;
-                    String ruolo = "";
+                    
                     
                     Vote vote = new Vote();
                     vote.setAm(yellowCarded);
@@ -78,14 +78,7 @@ public class VoteExtractor {
                     if (cleaned != null) {
                         if (cleaned.length == 31) {
                             
-                            if(cleaned[0].equals("P"))
-                                ruolo = "portiere";
-                            else if(cleaned[0].equals("D"))
-                                ruolo = "difensore";
-                            else if(cleaned[0].equals("C"))
-                                ruolo = "centrocampista";
-                            else if(cleaned[0].equals("A"))
-                                ruolo = "attaccante";
+                           
                             
                             name = cleaned[1].toString()+" ";
                             gf = cleaned[3].toString();
@@ -97,7 +90,7 @@ public class VoteExtractor {
                             as = cleaned[9].toString();
                             vi = cleaned[26].replace(',', '.').toString();
                             
-                            vote.setRuolo(ruolo);
+                           
                             
                             if (!gf.equals("-")) {
                                 vote.setGf(Integer.parseInt(gf));
@@ -151,14 +144,7 @@ public class VoteExtractor {
                             votes.put(name, vote);
                         } else {
                             
-                            if(cleaned[0].equals("P"))
-                                ruolo = "portiere";
-                            else if(cleaned[0].equals("D"))
-                                ruolo = "difensore";
-                            else if(cleaned[0].equals("C"))
-                                ruolo = "centrocampista";
-                            else if(cleaned[0].equals("A"))
-                                ruolo = "attaccante";
+                            
                             
                             name = cleaned[1].concat(" " + cleaned[2].toString()).toString() + " ";
                             gf = cleaned[4].toString();
@@ -170,7 +156,7 @@ public class VoteExtractor {
                             as = cleaned[10].toString();
                             vi = cleaned[27].replace(',', '.').toString();
 
-                            vote.setRuolo(ruolo);
+                            
                             if (!gf.equals("-")) {
                                 vote.setGf(Integer.parseInt(gf));
                             } else {

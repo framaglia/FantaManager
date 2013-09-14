@@ -4,7 +4,7 @@
  */
 package ui;
 
-import extractor.VoteExtractor;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +32,7 @@ public class VotesUI extends javax.swing.JFrame {
      * Creates new form VotesUI
      */
     
-    //private Map<String, Vote> votesMap = new HashMap<String,Vote>();
+    
     private Map<String, Formation> formationsMap = new HashMap<String,Formation>();
     private List<Match> matches = new ArrayList<Match>();
     private LoadFormations loadFormations;
@@ -738,7 +738,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldFormation12ActionPerformed
 
     private void jButtonDetail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail1ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation1.getText().toString()));
         df.loadFormation();
@@ -746,7 +746,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetail1ActionPerformed
 
     private void jButtonDetail2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail2ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation2.getText().toString()));
         df.loadFormation();
@@ -754,7 +754,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetail2ActionPerformed
 
     private void jButtonDetail3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail3ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation3.getText().toString()));
         df.loadFormation();
@@ -762,7 +762,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetail3ActionPerformed
 
     private void jButtonDetail4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail4ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation4.getText().toString()));
         df.loadFormation();
@@ -770,7 +770,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetail4ActionPerformed
 
     private void jButtonDetail5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail5ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation5.getText().toString()));
         df.loadFormation();
@@ -778,7 +778,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetail5ActionPerformed
 
     private void jButtonDetail6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail6ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation6.getText().toString()));
         df.loadFormation();
@@ -786,7 +786,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetail6ActionPerformed
 
     private void jButtonDetail7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail7ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation7.getText().toString()));
         df.loadFormation();
@@ -794,7 +794,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetail7ActionPerformed
 
     private void jButtonDetail8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail8ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation8.getText().toString()));
         df.loadFormation();
@@ -802,7 +802,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetail8ActionPerformed
 
     private void jButtonDetail9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail9ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation9.getText().toString()));
         df.loadFormation();
@@ -810,7 +810,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetail9ActionPerformed
 
     private void jButtonDetail10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail10ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation10.getText().toString()));
         df.loadFormation();
@@ -818,7 +818,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetail10ActionPerformed
 
     private void jButtonDetail11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail11ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation11.getText().toString()));
         df.loadFormation();
@@ -826,7 +826,7 @@ public class VotesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetail11ActionPerformed
 
     private void jButtonDetail12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetail12ActionPerformed
-        DetailFormation df = new DetailFormation();
+        FormationDetail df = new FormationDetail();
         
         df.setFormation(this.formationsMap.get(this.jTextFieldFormation12.getText().toString()));
         df.loadFormation();
@@ -846,10 +846,9 @@ public class VotesUI extends javax.swing.JFrame {
     private void jButtonCalculateScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalculateScoreActionPerformed
         
            
-            this.calculateScore = new CalculateScore(this.jRadioButtonBonusHome.isSelected(),this.path, this.matches);
+            this.calculateScore = new CalculateScore(this.jRadioButtonBonusHome.isSelected(), this.path, this.matches);
             for(Match m : matches) {
                 try {
-                    //System.out.println(this.formationsMap.get(m.getHomeTeam()).getFormation());
                     calculateScore.calculate(m.getHomeTeam(), this.formationsMap.get(m.getHomeTeam()));
                     calculateScore.calculate(m.getAwayTeam(), this.formationsMap.get(m.getAwayTeam()));
                 } catch (IOException ex) {
@@ -857,10 +856,19 @@ public class VotesUI extends javax.swing.JFrame {
                 }
             }
             for(Match m : matches) {
-                System.out.print(m.getHomeTeam()+"-"+m.getAwayTeam()+"="+m.getGolHome() + "-" + m.getGolAway() + "(" + m.getScoreHome() + "-" + m.getScoreAway() + ")" );
-                for(Player p : m.getUsedFormationAway().getFormation()){
+                System.out.println(m.getHomeTeam()+"-"+m.getAwayTeam()+"="+m.getGolHome() + "-" + m.getGolAway() + "(" + m.getScoreHome() + "-" + m.getScoreAway() + ")" );
+                for(Player p : m.getUsedFormationHome().getBench()){
                     try{
-                        System.out.println(p.getNome());
+                        System.out.println(p.getNome()+" "+p.getRuolo());
+                    }
+                    catch(Exception e){
+                        System.out.println("Non c'è");
+                    }
+                }
+                System.out.println("INCAMPO");
+                for(Player p : m.getUsedFormationHome().getFormation()){
+                    try{
+                        System.out.println(p.getNome()+" "+p.getRuolo());
                     }
                     catch(Exception e){
                         System.out.println("Non c'è");
@@ -869,7 +877,15 @@ public class VotesUI extends javax.swing.JFrame {
                 System.out.println("");
             }
             
-       
+            ScoreDetail sc = new ScoreDetail();
+            sc.setVotes(this.calculateScore.getVe().getVotes());
+            sc.setMatches(matches);
+            sc.setCs(calculateScore);
+            sc.show();
+            sc.fillMatches();
+            sc.checkVotes();
+            this.dispose();
+             
     }//GEN-LAST:event_jButtonCalculateScoreActionPerformed
 
     /**

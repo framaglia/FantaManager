@@ -13,8 +13,8 @@ import java.util.List;
  */
 public class Formation {
     
-    private String module;
-    private Team team;
+    
+    
     private List<Player> formation;
     private List<Player> bench;
 
@@ -22,13 +22,7 @@ public class Formation {
         return bench;
     }
 
-    public String getModule() {
-        return module;
-    }
-
-    public Team getTeam() {
-        return team;
-    }
+   
 
     public List<Player> getFormation() {
         return formation;

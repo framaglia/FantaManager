@@ -7,12 +7,13 @@ package logic;
 import extractor.VoteExtractor;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import model.Calendar;
+
 import model.Formation;
 import model.Match;
 import model.Player;
@@ -23,7 +24,7 @@ import model.Player;
  */
 public class CalculateScore {
 
-    private Calendar cal;
+   
     private VoteExtractor ve;
     private boolean bonusHome;
     private String path;
@@ -99,6 +100,9 @@ public class CalculateScore {
 
         int golSquadra = calculateGol(score);
 
+        fixBeches(matches);
+        sortFormations(matches);
+        
         for (Match m : matches) {
             if (m.getHomeTeam().equals(fantaSquadra)) {
                 m.setGolHome(golSquadra);
@@ -130,6 +134,7 @@ public class CalculateScore {
                             if (maxSub > 0) {
                                 fixedForm.getFormation().add(panchinaro);
                                 fixedForm.getBench().add(titolare);
+                                
                                 //								formation.getFormation().add(panchinaro);
                                 //								formation.getFormation().remove(titolare);
 
@@ -370,5 +375,29 @@ public class CalculateScore {
             gol = 10;
         }
         return gol;
+    }
+
+    private void fixBeches(List<Match> matches) {
+        for(Match m : matches){
+            for(Player p : m.getUsedFormationHome().getFormation()){
+                if(m.getUsedFormationHome().getBench().contains(p)){
+                    m.getUsedFormationHome().getBench().remove(p);
+                }
+            }
+            for(Player p : m.getUsedFormationAway().getFormation()){
+                if(m.getUsedFormationAway().getBench().contains(p)){
+                    m.getUsedFormationAway().getBench().remove(p);
+                }
+            }
+        }
+        
+        
+    }
+
+    private void sortFormations(List<Match> matches) {
+        for(int i = 0; i < matches.size(); i++){
+            Collections.sort(matches.get(i).getUsedFormationHome().getFormation(), new RoleComparator());
+            Collections.sort(matches.get(i).getUsedFormationAway().getFormation(), new RoleComparator());
+        }
     }
 }
