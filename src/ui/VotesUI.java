@@ -73,6 +73,14 @@ public class VotesUI extends javax.swing.JFrame {
         
        
  }
+
+    public CalculateScore getCalculateScore() {
+        return calculateScore;
+    }
+
+    public void setCalculateScore(CalculateScore calculateScore) {
+        this.calculateScore = calculateScore;
+    }
            
     
    
@@ -687,6 +695,7 @@ public class VotesUI extends javax.swing.JFrame {
     private void jButtonLoadFormationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoadFormationsActionPerformed
         this.loadFormations.getFormationsByDB();
         this.loadFormations.getrolePlayersByDB();
+        this.loadFormations.getRankingByDB();
     }//GEN-LAST:event_jButtonLoadFormationsActionPerformed
 
     private void jTextFieldFormation1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFormation1ActionPerformed
@@ -855,35 +864,18 @@ public class VotesUI extends javax.swing.JFrame {
                     Logger.getLogger(VotesUI.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            for(Match m : matches) {
-                System.out.println(m.getHomeTeam()+"-"+m.getAwayTeam()+"="+m.getGolHome() + "-" + m.getGolAway() + "(" + m.getScoreHome() + "-" + m.getScoreAway() + ")" );
-                for(Player p : m.getUsedFormationHome().getBench()){
-                    try{
-                        System.out.println(p.getNome()+" "+p.getRuolo());
-                    }
-                    catch(Exception e){
-                        System.out.println("Non c'è");
-                    }
-                }
-                System.out.println("INCAMPO");
-                for(Player p : m.getUsedFormationHome().getFormation()){
-                    try{
-                        System.out.println(p.getNome()+" "+p.getRuolo());
-                    }
-                    catch(Exception e){
-                        System.out.println("Non c'è");
-                    }
-                }
-                System.out.println("");
-            }
+            
             
             ScoreDetail sc = new ScoreDetail();
             sc.setVotes(this.calculateScore.getVe().getVotes());
             sc.setMatches(matches);
             sc.setCs(calculateScore);
+            sc.setDay(this.jComboBox1.getSelectedIndex()+1);
+            sc.setLf(loadFormations);
             sc.show();
             sc.fillMatches();
             sc.checkVotes();
+            sc.fillRanking();
             this.dispose();
              
     }//GEN-LAST:event_jButtonCalculateScoreActionPerformed

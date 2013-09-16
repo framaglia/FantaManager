@@ -18,7 +18,9 @@ public class Match {
     private double scoreAway;
     private Formation usedFormationHome;
     private Formation usedFormationAway;
-
+    private double modHome;
+    private double modAway;
+    
     public Match() {
         this.homeTeam = "";
         this.awayTeam = "";
@@ -28,6 +30,24 @@ public class Match {
         this.scoreAway = 0.0;
         this.usedFormationHome = new Formation();
         this.usedFormationAway = new Formation();
+        this.modAway = 0.0;
+        this.modHome = 0.0;
+    }
+
+    public double getModHome() {
+        return modHome;
+    }
+
+    public void setModHome(double modHome) {
+        this.modHome = modHome;
+    }
+
+    public double getModAway() {
+        return modAway;
+    }
+
+    public void setModAway(double modAway) {
+        this.modAway = modAway;
     }
 
     public String getHomeTeam() {

@@ -90,6 +90,7 @@ public class CalculateScore {
 
         }
         double mod = modifier(f);
+        
         score += mod;
 
         if (bonusHome && checkIsHome(fantaSquadra)) {
@@ -108,10 +109,14 @@ public class CalculateScore {
                 m.setGolHome(golSquadra);
                 m.setScoreHome(score);
                 m.setUsedFormationHome(f);
+                m.setModHome(mod);
+               
             } else if (m.getAwayTeam().equals(fantaSquadra)) {
                 m.setGolAway(golSquadra);
                 m.setScoreAway(score);
                 m.setUsedFormationAway(f);
+                m.setModAway(mod);
+                
 
             }
 
@@ -205,16 +210,8 @@ public class CalculateScore {
         } else {
 
 
-            int i = 0;
-            //			while (!found && i < formation.getBench().size()) {
-            //				if(formation.getBench().get(i).getRuolo().equals(role) && ve.getVotes().get(formation.getBench().get(i).getNome()).getVote() != 0.0) {
-            //					playerIn = formation.getBench().get(i);
-            //					found = true;
-            //
-            //				}
-            //				else i++;
-            //			}
-
+            int i;
+           
             for (i = 0; !found && i < formation.getBench().size(); i++) {
                 if (role.equals("portiere")) {
                     playerIn = new Player();

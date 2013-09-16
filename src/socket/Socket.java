@@ -23,6 +23,7 @@ import java.util.List;
 import model.Cash;
 import model.Formation;
 import model.Match;
+import model.Team;
 
 
 
@@ -337,6 +338,42 @@ public class Socket implements IOCallback {
                     this.loadFormations.teamLoaded();
                 }
                 
+                else if(event.equals("ranking")){
+                    JSONArray jsonArray = ((JSONArray) args[0]);
+                    for(int i = 0; i < jsonArray.length(); i++){
+                        try {
+                            JSONArray arrNames = jsonArray.getJSONObject(i).getJSONArray("ranking");
+                            JSONArray arrScores = jsonArray.getJSONObject(i).getJSONArray("scores");
+                            JSONArray arrGf = jsonArray.getJSONObject(i).getJSONArray("gf");
+                            JSONArray arrGs = jsonArray.getJSONObject(i).getJSONArray("gs");
+                            JSONArray arrMp = jsonArray.getJSONObject(i).getJSONArray("mp");
+                            JSONArray arrWin = jsonArray.getJSONObject(i).getJSONArray("win");
+                            JSONArray arrLost = jsonArray.getJSONObject(i).getJSONArray("lost");
+                            JSONArray arrDraw = jsonArray.getJSONObject(i).getJSONArray("draw");
+                            JSONArray arrDg = jsonArray.getJSONObject(i).getJSONArray("dg");
+                            for(int j = 0; j < arrNames.length(); j++){
+                                Team t = new Team();
+                                t.setName(stringTeamScoresClean(arrNames.getString(j)));
+                                t.setDg(arrDg.getInt(j));
+                                t.setDraw(arrDraw.getInt(j));
+                                t.setGf(arrGf.getInt(j));
+                                t.setGs(arrGs.getInt(j));
+                                t.setLost(arrLost.getInt(j));
+                                t.setMp(arrMp.getDouble(j));
+                                t.setPunti(arrScores.getInt(j));
+                                t.setWin(arrWin.getInt(j));
+                                
+                                    this.loadFormations.getTeamScores().add(t);
+                               
+                               
+                            }
+                        } catch (JSONException ex) {
+                            Logger.getLogger(Socket.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    
+                }
+                
                 
                 
 		
@@ -382,6 +419,40 @@ public class Socket implements IOCallback {
           else if(cleaned.startsWith("vt"))
               matched = "vts";
           else if(cleaned.startsWith("tro"))
+              matched = "astronzo";
+          else if(cleaned.startsWith("fanf"))
+              matched = "fanfulla";
+          else matched = "fantaroma";
+          
+          return matched;
+      }
+       
+      
+      public String stringTeamScoresClean(String toClean){
+          String copy = toClean;
+          String trimmed = copy.trim();
+          String cleaned;
+          cleaned = trimmed.toLowerCase();
+          String matched;
+          if (cleaned.startsWith("acd"))
+              matched = "acdc";
+          else if(cleaned.startsWith("ac y"))
+              matched = "acybris";
+          else if(cleaned.startsWith("cs"))
+              matched = "cska";
+          else if(cleaned.startsWith("dl"))
+              matched = "dlc";
+          else if(cleaned.startsWith("gp"))
+              matched = "gpsundergland";
+          else if(cleaned.startsWith("par"))
+              matched = "paris";
+          else if(cleaned.startsWith("fel"))
+              matched = "felix";
+          else if(cleaned.startsWith("tcc"))
+              matched = "tccfc";
+          else if(cleaned.startsWith("vt"))
+              matched = "vts";
+          else if(cleaned.startsWith("as tro"))
               matched = "astronzo";
           else if(cleaned.startsWith("fanf"))
               matched = "fanfulla";
