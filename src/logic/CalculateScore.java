@@ -41,6 +41,89 @@ public class CalculateScore {
         }
     }
 
+    public void calculateOnly(String fantaSquadra, Formation formation) throws IOException {
+        
+        
+       
+
+        double score = 0;
+
+
+
+        for (Player p : formation.getFormation()) {
+
+
+            double app = 0.0;
+
+            if (p.getNome().equals("Office")) {
+
+                app += 4.0;
+
+            } else if (p.getNome().equals("OfficeP")) {
+                app += 3.0;
+            } else if (p.getNome().equals("Over")) {
+
+                app += 0.0;
+
+            } else {
+
+                app += ve.getVotes().get(p.getNome()).getVote();
+                app += 3.0 * ve.getVotes().get(p.getNome()).getGf();
+                app += ve.getVotes().get(p.getNome()).getAs();
+                app += -2.0 * ve.getVotes().get(p.getNome()).getAu();
+                app += 3.0 * ve.getVotes().get(p.getNome()).getGr();
+                app += -1.0 * ve.getVotes().get(p.getNome()).getGs();
+                app += 3.0 * ve.getVotes().get(p.getNome()).getRp();
+                app += -3.0 * ve.getVotes().get(p.getNome()).getRs();
+                if (ve.getVotes().get(p.getNome()).isAm()) {
+                    app -= 0.5;
+                }
+                if (ve.getVotes().get(p.getNome()).isEs()) {
+                    app -= 1.0;
+                }
+            }
+
+
+
+
+            score += app;
+
+        }
+        double mod = modifier(formation);
+        
+        score += mod;
+
+        if (bonusHome && checkIsHome(fantaSquadra)) {
+            score += 2;
+
+        }
+
+
+        int golSquadra = calculateGol(score);
+
+        fixBeches(matches);
+        sortFormations(matches);
+        
+        for (Match m : matches) {
+            if (m.getHomeTeam().equals(fantaSquadra)) {
+                m.setGolHome(golSquadra);
+                m.setScoreHome(score);
+                m.setUsedFormationHome(formation);
+                m.setModHome(mod);
+               
+            } else if (m.getAwayTeam().equals(fantaSquadra)) {
+                m.setGolAway(golSquadra);
+                m.setScoreAway(score);
+                m.setUsedFormationAway(formation);
+                m.setModAway(mod);
+                
+
+            }
+
+
+        }
+    }
+    
     public void calculate(String fantaSquadra, Formation formation) throws IOException {
         
         
@@ -152,14 +235,25 @@ public class CalculateScore {
             }
 
         }
-
-
+        int dif = 0;
+        int cc = 0;
+        int att = 0;
+        for (Player p : formation.getFormation()) {
+            if (ve.getVotes().containsKey(p.getNome()) && ve.getVotes().get(p.getNome()).getVote() != 0.0) {
+                if(p.getRuolo().equals("difensore"))
+                    dif += 1;
+                else if(p.getRuolo().equals("centrocampista"))
+                    cc += 1;
+                else if(p.getRuolo().equals("attaccante"))
+                    att += 1;
+            }
+        } 
         for (Player p : formation.getFormation()) {
             if (ve.getVotes().containsKey(p.getNome()) && ve.getVotes().get(p.getNome()).getVote() != 0.0) {
                 fixedForm.getFormation().add(p);
             } else if (!fixedForm.getBench().contains(p)) {
 
-                Player playerIn = subsitute(p, formation, fixedForm, maxSub, officeIn);
+                Player playerIn = subsitute(p, formation, fixedForm, maxSub, officeIn, dif, cc, att);
                 try {
                     if (playerIn.getNome().equals("Office")) {
                         officeIn = true;
@@ -175,7 +269,8 @@ public class CalculateScore {
                 //				formation.getFormation().remove(p);
                 //				formation.getBench().remove(playerIn);
                 //				formation.getBench().add(p);
-                maxSub -= 1;
+                if(!playerIn.getNome().equals("Over"))
+                    maxSub -= 1;
 
 
             }
@@ -187,14 +282,14 @@ public class CalculateScore {
             fixedForm.getBench().add(p);
         }
 
-       
+       Collections.sort(fixedForm.getFormation(),new RoleComparator());
 
         return fixedForm;
 
 
     }
 
-    private Player subsitute(Player p, Formation formation, Formation fixed, int subs, boolean officeIn) {
+    private Player subsitute(Player p, Formation formation, Formation fixed, int subs, boolean officeIn, int dif, int cc, int att) {
 
 
         String role = p.getRuolo();
@@ -211,8 +306,11 @@ public class CalculateScore {
 
 
             int i;
-           
+            
             for (i = 0; !found && i < formation.getBench().size(); i++) {
+                
+                
+                
                 if (role.equals("portiere")) {
                     playerIn = new Player();
                     playerIn.setNome("OfficeP");
@@ -222,29 +320,23 @@ public class CalculateScore {
                 } else if (ve.getVotes().containsKey(formation.getBench().get(i).getNome()) && ve.getVotes().get(formation.getBench().get(i).getNome()).getVote() != 0.0) {
 
                     if (!formation.getBench().get(i).getRuolo().equals("portiere") && !fixed.getFormation().contains(formation.getBench().get(i))) {
+                        
+                        
+                        int conta = countByRole(fixed, formation.getBench().get(i).getRuolo());
 
-                        int conta = countByRole(formation, formation.getBench().get(i).getRuolo());
-
-                        if (formation.getBench().get(i).getRuolo().equals("difensore") && conta < 5) {
+                        if (formation.getBench().get(i).getRuolo().equals("difensore") && (conta+dif+1) < 5) {
                             playerIn = formation.getBench().get(i);
                             found = true;
-                        } else if (formation.getBench().get(i).getRuolo().equals("centrocampista") && conta < 5) {
+                            dif += 1;
+                        } else if (formation.getBench().get(i).getRuolo().equals("centrocampista") && (conta+cc+1) < 5) {
                             playerIn = formation.getBench().get(i);
                             found = true;
-                        } else if (formation.getBench().get(i).getRuolo().equals("attaccante") && conta < 3) {
+                            cc += 1;
+                        } else if (formation.getBench().get(i).getRuolo().equals("attaccante") && (conta+att+1) < 3) {
                             playerIn = formation.getBench().get(i);
                             found = true;
-                        } else if (!officeIn) {
-                            playerIn = new Player();
-                            playerIn.setNome("Office");
-                            playerIn.setRuolo(p.getRuolo());
-                            found = true;
-                            officeIn = true;
-                        } else {
-                            playerIn = new Player();
-                            playerIn.setNome("Over");
-                            found = true;
-                        }
+                            att += 1;
+                        } 
                     }
                 }
             }
@@ -264,7 +356,7 @@ public class CalculateScore {
     public int countByRole(Formation formation, String ruolo) {
         int cont = 0;
         for (Player p : formation.getFormation()) {
-            if (p.getRuolo().equals(ruolo)) {
+            if (!p.getNome().equals("Office") && !p.getNome().equals("Over") && p.getRuolo().equals(ruolo)) {
                 cont++;
             }
         }
@@ -278,7 +370,7 @@ public class CalculateScore {
 
 
         for (Player p : f.getFormation()) {
-            if (p.getRuolo().equals("portiere") && p.getNome().equals("OfficeP")) {
+            if (p.getNome().equals("OfficeP") ) {
                 mod = 0.0;
                 found = true;
             }
@@ -289,11 +381,11 @@ public class CalculateScore {
 
             double keeperVote = 0;
             for (Player d : f.getFormation()) {
-                if (d.getRuolo().equals("difensore") && !d.getNome().equals("Office")) {
+                if (!d.getNome().equals("Office") && !d.getNome().equals("Over") && d.getRuolo().equals("difensore")  ) {
                     difensori.add(d);
 
                 }
-                if (d.getRuolo().equals("portiere")) {
+                if (!d.getNome().equals("Office") && !d.getNome().equals("Over") && d.getRuolo().equals("portiere")) {
                     keeperVote = ve.getVotes().get(d.getNome()).getVote();
 
                 }

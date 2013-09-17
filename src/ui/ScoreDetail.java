@@ -5825,8 +5825,8 @@ this.jTextFieldP1.setText(this.matches.get(5).getUsedFormationHome().getFormatio
     private void jButtonUpdateScoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateScoresActionPerformed
         for(Match m : matches) {
                 try {
-                    cs.calculate(m.getHomeTeam(), m.getUsedFormationHome());
-                    cs.calculate(m.getAwayTeam(), m.getUsedFormationAway());
+                    cs.calculateOnly(m.getHomeTeam(), m.getUsedFormationHome());
+                    cs.calculateOnly(m.getAwayTeam(), m.getUsedFormationAway());
                 } catch (IOException ex) {
                     Logger.getLogger(VotesUI.class.getName()).log(Level.SEVERE, null, ex);
                 }

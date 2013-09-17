@@ -20,7 +20,9 @@ public class RoleComparator implements Comparator<Player>{
         
         int comp;
         
-        if (t.getRuolo().equals("portiere") && t1.getRuolo().equals("difensore"))
+        if(t.getNome().equals("Over") || t.getNome().equals("OfficeP") || t.getNome().equals("Office") || t1.getNome().equals("Over") || t1.getNome().equals("OfficeP") || t1.getNome().equals("Office"))
+            comp = 0;
+        else if (t.getRuolo().equals("portiere") && t1.getRuolo().equals("difensore"))
             comp = -1;
         else if(t.getRuolo().equals("portiere") && t1.getRuolo().equals("centrocampista"))
             comp = -1;

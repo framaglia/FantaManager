@@ -74,7 +74,7 @@ public class VoteExtractor {
                     vote.setEs(redCarded);
                     
                     String[] cleaned = cleanElement(tr.text());
-                    
+                    //System.out.println(tr.text());
                     if (cleaned != null) {
                         if (cleaned.length == 31) {
                             
@@ -89,10 +89,11 @@ public class VoteExtractor {
                             au = cleaned[8].toString();
                             as = cleaned[9].toString();
                             vi = cleaned[26].replace(',', '.').toString();
-                            
+                            //System.out.println(name+as);
                            
                             
                             if (!gf.equals("-")) {
+                                //System.out.println(cleaned[1]);
                                 vote.setGf(Integer.parseInt(gf));
                             } else {
                                 vote.setGf(0);
@@ -155,10 +156,15 @@ public class VoteExtractor {
                             au = cleaned[9].toString();
                             as = cleaned[10].toString();
                             vi = cleaned[27].replace(',', '.').toString();
-
+                            
+                            //System.out.println(name+as);
                             
                             if (!gf.equals("-")) {
-                                vote.setGf(Integer.parseInt(gf));
+                                try{
+                                vote.setGf(Integer.parseInt(gf));}
+                                catch(Exception e){
+                                    
+                                }
                             } else {
                                 vote.setGf(0);
                             }
