@@ -159,9 +159,9 @@ public class LoadFormations {
         
         String[] teams = new String[12];
         String[][] formation = new String[12][11];
-        String[][] bench = new String[12][7];
+        String[][] bench = new String[12][maxBenchSize()];
         String[][] scorePlayTit = new String[12][11];
-        String[][] scorePlayPanc = new String[12][7];
+        String[][] scorePlayPanc = new String[12][maxBenchSize()];
         String[] magic = new String[12];
         String[] gol = new String[12];
         String[] mod = new String[12];
@@ -317,6 +317,20 @@ public class LoadFormations {
         this.socket.getSocket().emit("saveScores", jo);
     }
     
+    public int maxBenchSize(){
+        
+        int max = 0;
+        for (Match m : matches){
+            if(m.getUsedFormationAway().getBench().size() > max){
+                max = m.getUsedFormationAway().getBench().size();
+            }
+            if(m.getUsedFormationHome().getBench().size() > max){
+                max = m.getUsedFormationHome().getBench().size();
+            }
+        }
+        return max;
+    }
+    
    public void saveRanking() throws JSONException{
        JSONObject jo = new JSONObject();
        String[] ranking = new String[12];
@@ -334,7 +348,7 @@ public class LoadFormations {
            ranking[i] = t.getName();
            gf[i] = t.getGf();
            gs[i] = t.getGs();
-           dg[i] = t.getGf();
+           dg[i] = t.getDg();
            scores[i] = t.getPunti();
            w[i] = t.getWin();
            l[i] = t.getLost();
