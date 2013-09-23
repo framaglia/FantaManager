@@ -22,6 +22,14 @@ public class Formation {
         return bench;
     }
 
+    public void setFormation(List<Player> formation) {
+        this.formation = formation;
+    }
+
+    public void setBench(List<Player> bench) {
+        this.bench = bench;
+    }
+
    
 
     public List<Player> getFormation() {

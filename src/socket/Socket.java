@@ -436,7 +436,7 @@ public class Socket implements IOCallback {
           String matched;
           if (cleaned.startsWith("acd"))
               matched = "acdc";
-          else if(cleaned.startsWith("ac y"))
+          else if(cleaned.startsWith("acy"))
               matched = "acybris";
           else if(cleaned.startsWith("cs"))
               matched = "cska";
@@ -452,7 +452,7 @@ public class Socket implements IOCallback {
               matched = "tccfc";
           else if(cleaned.startsWith("vt"))
               matched = "vts";
-          else if(cleaned.startsWith("as tro"))
+          else if(cleaned.startsWith("astro"))
               matched = "astronzo";
           else if(cleaned.startsWith("fanf"))
               matched = "fanfulla";
