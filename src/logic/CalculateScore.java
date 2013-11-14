@@ -101,7 +101,7 @@ public class CalculateScore {
 
 		int golSquadra = calculateGol(score);
 
-		fixBenches(matches);
+		//fixBenches(matches);
 		sortFormations(matches);
 
 		for (Match m : matches) {
@@ -184,7 +184,7 @@ public class CalculateScore {
 
 		int golSquadra = calculateGol(score);
                 
-		fixBenches(matches);
+		//fixBenches(matches);
 		sortFormations(matches);
 
 		for (Match m : matches) {
